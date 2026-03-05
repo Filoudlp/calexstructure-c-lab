@@ -11,6 +11,7 @@ components_by_slot:
 custom_component: false
 is_package: false
 layout:
+  data_bindings: []
   properties:
     content_padding: ['8', '8', '8', '8']
     navigation_rail_collapse_to: bottom_app_bar
