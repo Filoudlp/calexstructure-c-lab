@@ -1,33 +1,123 @@
 components:
-- layout_properties: {grid_position: 'ZAMWZN,UKCBWI'}
-  name: rich_text_1
-  properties: {align: center, content: 'Welcome to Anvil''s SaaS template. For information on how to use this template, see our guide here: [https://anvil.works/learn/tutorials/using-saas-template](https://anvil.works/learn/tutorials/using-saas-template).', font_size: 26, foreground: '#3B4C66', role: italic}
-  type: RichText
 - components:
-  - components:
-    - layout_properties: {slot: card-content-container-slot}
-      name: title
-      properties: {align: center, font_size: 26, scale: medium, text: 'Add your company name, tagline and/or logo here.'}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - event_bindings: {click: login_button_click}
-      layout_properties: {slot: card-content-container-slot}
-      name: login_button
-      properties:
-        align: center
-        appearance: filled
-        spacing:
-          margin: ['10', null, null, null]
-        text: Login
-      type: form:dep_gqlhr7sei7ys7:_Components.Button
-    layout_properties: {slot: card-content-slot}
-    name: card_content_container_2
+  - layout_properties: {grid_position: 'WIDVIZ,YHYEHP'}
+    name: title
+    properties: {align: center, font_size: 26, scale: medium, text: C-LAB}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - event_bindings: {click: login_button_click}
+    layout_properties: {grid_position: 'WIDVIZ,RIOFEC'}
+    name: login_button
     properties:
-      margin: ['64', '32', '64', '32']
-    type: form:dep_gqlhr7sei7ys7:_Components.Card.CardContentContainer
-  layout_properties: {grid_position: 'LHSAXB,CLLCJB'}
-  name: card_1
+      align: center
+      appearance: filled
+      spacing:
+        margin: ['10', null, null, null]
+      text: Login
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
+  layout_properties: {grid_position: 'EDZWTI,BNMGUF'}
+  name: column_panel_2
+  properties: {col_widths: '{"YHYEHP":50,"RIOFEC":10}'}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'UPBYNM,DKEYWG'}
+    name: heading_4
+    properties: {text: Estimez la structure de vos projets en quelques clics.}
+    type: form:dep_gqlhr7sei7ys7:_Components.Heading
+  - layout_properties: {grid_position: 'UPBYNM,OQZLQF EKXHYS,JFNWWG'}
+    name: rich_text_2
+    properties: {content: 'Béton Armé • Acier • Bois. Obtenez une pré-étude structurelle et une estimation budgétaire fiable, basée sur des ratios de chantier réels.'}
+    type: RichText
+  - event_bindings: {click: login_button_click}
+    layout_properties: {grid_position: 'UPBYNM,OQZLQF XGIDSA,HSKQLU'}
+    name: button_1
+    properties: {align: center, text: Lancer la calculatrice}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
+  layout_properties: {grid_position: 'ZWYBIT,OSKFVZ'}
+  name: column_panel_1
   properties: {}
-  type: form:dep_gqlhr7sei7ys7:_Components.Card
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'NFODYS,JLDTOG GQYJMN,KJHUCS'}
+    name: heading_5
+    properties: {text: Arrêtez de piloter vos projets à vue.}
+    type: form:dep_gqlhr7sei7ys7:_Components.Heading
+  - components:
+    - components:
+      - layout_properties: {slot: card-content-container-slot}
+        name: heading_1
+        properties: {text: Ultra rapide}
+        type: form:dep_gqlhr7sei7ys7:_Components.Heading
+      - layout_properties: {slot: card-content-container-slot}
+        name: text_2
+        properties:
+          text: |-
+            Vos résultats en quelques secondes
+            En seulement quelques clics
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
+      layout_properties: {slot: card-content-slot}
+      name: card_content_container_2
+      properties: {}
+      type: form:dep_gqlhr7sei7ys7:_Components.Card.CardContentContainer
+    layout_properties: {grid_position: 'NFODYS,ARBLQK UBGOSO,NYALPI'}
+    name: card_3
+    properties: {}
+    type: form:dep_gqlhr7sei7ys7:_Components.Card
+  - components:
+    - components:
+      - layout_properties: {slot: card-content-container-slot}
+        name: heading_2
+        properties: {text: 45%}
+        type: form:dep_gqlhr7sei7ys7:_Components.Heading
+      - layout_properties: {slot: card-content-container-slot}
+        name: text_3
+        properties:
+          text: |-
+            Plus de pistes
+            Boostez votre pipeline en augmentant le nombre de pistes potentielles.
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
+      layout_properties: {slot: card-content-slot}
+      name: card_content_container_3
+      properties: {}
+      type: form:dep_gqlhr7sei7ys7:_Components.Card.CardContentContainer
+    layout_properties: {grid_position: 'NFODYS,ARBLQK UBGOSO,WQFGLB'}
+    name: card_2
+    properties: {}
+    type: form:dep_gqlhr7sei7ys7:_Components.Card
+  - components:
+    - components:
+      - layout_properties: {slot: card-content-container-slot}
+        name: heading_3
+        properties: {text: 8+}
+        type: form:dep_gqlhr7sei7ys7:_Components.Heading
+      - layout_properties: {slot: card-content-container-slot}
+        name: text_4
+        properties:
+          text: |
+            Pages incroyables
+            Découvrez des pages web exceptionnelles et très attrayantes.
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
+      layout_properties: {slot: card-content-slot}
+      name: card_content_container_1
+      properties: {}
+      type: form:dep_gqlhr7sei7ys7:_Components.Card.CardContentContainer
+    layout_properties: {grid_position: 'NFODYS,ARBLQK GJWALB,AAWCDQ'}
+    name: card_1
+    properties: {}
+    type: form:dep_gqlhr7sei7ys7:_Components.Card
+  - components:
+    - event_bindings: {click: login_button_click}
+      layout_properties: {}
+      name: button_2
+      properties: {align: center, text: Lancer la calculatrice}
+      type: form:dep_gqlhr7sei7ys7:_Components.Button
+    layout_properties: {grid_position: 'NFODYS,JLDTOG BMGJCX,WYDHCM'}
+    name: rich_text_3
+    properties: {content: 'L''analyse des chiffres à l''origine de notre succès : un examen approfondi des paramètres essentiels à l''origine des réalisations de notre entreprise'}
+    type: RichText
+  layout_properties: {grid_position: 'JZWUYK,AVJEUZ'}
+  name: outlined_card_1
+  properties: {col_widths: '{"JLDTOG":20,"ARBLQK":40}', role: outlined-card}
+  type: ColumnPanel
 container:
   event_bindings: {show: form_show}
   type: ColumnPanel

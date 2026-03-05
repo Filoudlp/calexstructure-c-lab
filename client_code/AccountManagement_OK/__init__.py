@@ -1,4 +1,4 @@
-from ._anvil_designer import AccountManagementTemplate
+from ._anvil_designer import AccountManagement_OKTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -10,7 +10,7 @@ from .ChangeName import ChangeName
 from .ChangeEmail import ChangeEmail
 from .DeleteAccountAlert import DeleteAccountAlert
 
-class AccountManagement(AccountManagementTemplate):
+class AccountManagement_OK(AccountManagement_OKTemplate):
   def __init__(self, **properties):
     self.user = anvil.users.get_user()
     
