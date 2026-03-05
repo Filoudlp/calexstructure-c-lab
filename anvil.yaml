@@ -74,5 +74,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/email.yml
-startup: {module: Layout_Calculation, type: form}
+startup: {module: Poutre_CM, type: form}
 startup_form: null

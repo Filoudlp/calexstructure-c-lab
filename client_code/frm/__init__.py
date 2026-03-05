@@ -1,11 +1,10 @@
-from ._anvil_designer import Form1Template
+from ._anvil_designer import frmTemplate
 from anvil import *
 import anvil.server
 from anvil.js import get_dom_node
 
 
-class Form1(Form1Template):
-
+class frm(frmTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 

@@ -1,0 +1,34 @@
+components:
+- layout_properties: {grid_position: 'IYWYKQ,ULHSJG'}
+  name: navigation_link_1
+  properties: {text: Poutre BA}
+  type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+- layout_properties: {grid_position: 'KCCRUK,IFIWAZ'}
+  name: navigation_link_2
+  properties: {navigate_to: Poutre_CM, text: Poutre CM}
+  type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+- layout_properties: {grid_position: 'KESIOM,NAFHQK'}
+  name: navigation_link_3
+  properties: {text: Poteau CM}
+  type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+- event_bindings: {click: stripe_pricing_link_click}
+  layout_properties: {grid_position: 'XTMNQA,RDOWDJ'}
+  name: navigation_link_4
+  properties: {icon: 'mi:attach_money', text: Prix}
+  type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+- event_bindings: {click: stripe_pricing_link_click}
+  layout_properties: {grid_position: 'EUXKFQ,UCFEFA'}
+  name: upgrade_navigation_link
+  properties: {icon: 'mi:arrow_upward', text: Upgrade}
+  type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+- layout_properties: {grid_position: 'QJQNAF,CBECBH'}
+  name: navigation_link_6
+  properties: {icon: 'mi:person', navigate_to: AccountManagement_OK, text: Compte}
+  type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+- layout_properties: {grid_position: 'VHWCCL,FAYKVH'}
+  name: navigation_link_5
+  properties: {icon: 'mi:logout', text: Log out}
+  type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+container: {type: ColumnPanel}
+custom_component: true
+is_package: true
