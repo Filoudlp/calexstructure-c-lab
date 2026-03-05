@@ -22,3 +22,15 @@ class Poutre_CM(Poutre_CMTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the component is clicked."""
     self.layout.fun_show_sidesheet()
+
+  @handle("outlined_button_1", "click")
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.outlined_button_1.icon == "fa:arrow-down":
+      self.outlined_button_1.icon = "fa:arrow-right"
+      self.option_avancer_cm_1.visible = False
+    else:
+      self.outlined_button_1.icon = "fa:arrow-down"
+      self.option_avancer_cm_1.visible = True
+
+    

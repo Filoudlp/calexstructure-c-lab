@@ -13,19 +13,48 @@ components_by_slot:
         Géométrie
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
   - layout_properties: {}
+    name: geometrie_1
+    properties: {}
+    type: form:Poutre_CM.geometrie
+  - layout_properties: {}
     name: heading_3
     properties:
       text: |
         Matériaux
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
   - layout_properties: {}
+    name: materiaux_cm_1
+    properties: {}
+    type: form:Poutre_CM.materiaux_CM
+  - layout_properties: {}
     name: heading_4
     properties: {text: Effort}
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
   - layout_properties: {}
-    name: heading_5
-    properties: {text: Options avancés}
-    type: form:dep_gqlhr7sei7ys7:_Components.Heading
+    name: effort_cm_2
+    properties: {}
+    type: form:Poutre_CM.effort_CM
+  - components:
+    - event_bindings: {}
+      layout_properties: {grid_position: 'PWXZBX,ZXNPGN'}
+      name: outlined_button_1
+      properties:
+        align: left
+        icon: fa:arrow-down
+        icon_align: left
+        role: outlined-button
+        spacing:
+          padding: [null, '12', null, null]
+        text: Options avancés
+      type: Button
+    - layout_properties: {grid_position: 'LHHMII,PDMRND'}
+      name: option_avancer_cm_1
+      properties: {}
+      type: form:Poutre_CM.option_avancer_CM
+    layout_properties: {}
+    name: outlined_card_1
+    properties: {col_widths: '{"OHVNGO":5}', role: outlined-card}
+    type: ColumnPanel
   - event_bindings: {}
     layout_properties: {}
     name: button_1
@@ -40,40 +69,111 @@ components_by_slot:
     - layout_properties: {grid_position: 'EBAUHR,MNKYDG'}
       name: heading_7
       properties:
+        scale: small
         text: |
           Taux d'utilisation
       type: form:dep_gqlhr7sei7ys7:_Components.Heading
     - layout_properties: {grid_position: 'SVDQVA,QSZWAU'}
       name: heading_13
-      properties: {text: ELU}
+      properties: {scale: large, style: title, text: ELU}
       type: form:dep_gqlhr7sei7ys7:_Components.Heading
     - components:
-      - layout_properties: {}
-        name: text_1
-        properties: {text: 'Flexion :'}
-        type: form:dep_gqlhr7sei7ys7:_Components.Text
-      - layout_properties: {}
-        name: text_2
-        properties: {text: 'Flexion composé :'}
-        type: form:dep_gqlhr7sei7ys7:_Components.Text
+      - components: []
+        layout_properties: {}
+        name: rich_text_1
+        properties:
+          content: |
+            Taux global :
+            Formule [REF]
+        type: RichText
+      - components: []
+        name: rich_text_2
+        properties:
+          content: |
+            Flexion :
+            Formule [REF]
+        type: RichText
+      - components: []
+        name: rich_text_3
+        properties:
+          content: |
+            Flexion composé :
+            Formule [REF]
+        type: RichText
+      - name: divider_1
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:_Components.Divider
+      - components: []
+        name: rich_text_8
+        properties:
+          content: |
+            Effort tranchant :
+            Formule [REF]
+        type: RichText
+      - components: []
+        name: rich_text_9
+        properties:
+          content: |
+            Flexion composé :
+            Formule [REF]
+        type: RichText
+      - components: []
+        name: rich_text_10
+        properties:
+          content: |
+            Flambement :
+            Formule [REF]
+        type: RichText
+      - name: rich_text_11
+        properties:
+          content: |
+            Deversement :
+            Formule [REF]
+        type: RichText
       layout_properties: {full_width_row: false, grid_position: 'GPVNEY,AMQDDG'}
       name: linear_panel_1
       properties: {}
       type: LinearPanel
-    - layout_properties: {grid_position: 'AHSDUR,NBSLKR'}
+    - layout_properties: {grid_position: 'OLXBLW,YUDDCM'}
       name: heading_9
-      properties: {text: ELS}
+      properties: {scale: large, style: title, text: ELS}
       type: form:dep_gqlhr7sei7ys7:_Components.Heading
-    - layout_properties: {grid_position: 'KOALYN,FTFFHI'}
-      name: heading_8
-      properties:
-        text: |
-          Détails
-      type: form:dep_gqlhr7sei7ys7:_Components.Heading
-    - layout_properties: {grid_position: 'ZNRQZK,NMDENW'}
-      name: text_3
+    - components:
+      - components: []
+        name: rich_text_4
+        properties:
+          content: |
+            Taux global :
+            Formule [REF]
+        type: RichText
+      - name: divider_2
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:_Components.Divider
+      - components: []
+        layout_properties: {}
+        name: rich_text_5
+        properties:
+          content: |
+            Déformation X :
+            Formule [REF]
+        type: RichText
+      - components: []
+        name: rich_text_6
+        properties:
+          content: |
+            Déformation Y :
+            Formule [REF]
+        type: RichText
+      - name: rich_text_7
+        properties:
+          content: |
+            Déformation Z :
+            Formule [REF]
+        type: RichText
+      layout_properties: {grid_position: 'IOKQGP,WDRXIC'}
+      name: linear_panel_2
       properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
+      type: LinearPanel
     layout_properties: {}
     name: column_panel_1
     properties: {}
