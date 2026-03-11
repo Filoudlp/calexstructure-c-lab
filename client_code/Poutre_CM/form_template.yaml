@@ -15,7 +15,7 @@ components_by_slot:
   - layout_properties: {}
     name: geometrie_1
     properties: {}
-    type: form:Poutre_CM.geometrie
+    type: form:Poutre_CM.geometrie_POU
   - layout_properties: {}
     name: heading_3
     properties:
@@ -47,13 +47,26 @@ components_by_slot:
           padding: [null, '12', null, null]
         text: Options avancés
       type: Button
+    - event_bindings: {}
+      layout_properties: {grid_position: 'PWXZBX,PCIOZD'}
+      name: outlined_button_3
+      properties:
+        align: left
+        icon: fa:arrow-right
+        icon_align: left
+        role: outlined-button
+        spacing:
+          padding: [null, '12', null, null]
+        text: |
+          Résultat
+      type: Button
     - layout_properties: {grid_position: 'LHHMII,PDMRND'}
       name: option_avancer_cm_1
       properties: {}
       type: form:Poutre_CM.option_avancer_CM
     layout_properties: {}
     name: outlined_card_1
-    properties: {col_widths: '{"OHVNGO":5}', role: outlined-card}
+    properties: {col_widths: '{}', role: outlined-card}
     type: ColumnPanel
   - event_bindings: {}
     layout_properties: {}
@@ -61,6 +74,19 @@ components_by_slot:
     properties: {align: center, text: Calculer}
     type: form:dep_gqlhr7sei7ys7:_Components.Button
   sidesheet:
+  - event_bindings: {}
+    layout_properties: {}
+    name: outlined_button_2
+    properties:
+      align: left
+      icon: fa:arrow-right
+      icon_align: left
+      role: outlined-button
+      spacing:
+        padding: [null, '12', null, null]
+      text: |
+        Résultat
+    type: Button
   - components:
     - layout_properties: {grid_position: 'QCIJJY,TXZKGD'}
       name: heading_6

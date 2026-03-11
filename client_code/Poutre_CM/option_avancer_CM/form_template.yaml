@@ -1,16 +1,99 @@
 components:
 - components:
+  - layout_properties: {grid_position: 'NCCWZL,PIUVZJ'}
+    name: text_11
+    properties:
+      text: |-
+        Déformée max
+        L / X
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'NCCWZL,DAWIKD'}
+    name: text_box_9
+    properties: {appearance: outlined, text: '500'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'OCQFHE,IQYMXA'}
     name: text_1
-    properties: {text: Text}
+    properties: {text: γm0}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'OCQFHE,AGLXLS'}
     name: text_box_1
-    properties: {appearance: outlined}
+    properties: {appearance: outlined, label: '', text: '1'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'OKTNFJ,QMBGHU'}
+    name: text_2
+    properties: {text: γm1}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'OKTNFJ,UISDOE'}
+    name: text_box_2
+    properties: {appearance: outlined, text: '1'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'KOVNMM,ISSJIO'}
+    name: text_12
+    properties: {text: γm2}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'KOVNMM,MSUEDI'}
+    name: text_box_10
+    properties: {appearance: outlined, text: '1,25'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'PUNJXM,LGUNRA'}
+    name: text_3
+    properties: {text: α}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'PUNJXM,JGNOYR JTZZDQ,SWYOMI'}
+    name: text_5
+    properties: {align: center, text: RHS}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'PUNJXM,JGNOYR EHUPVF,PMIULF'}
+    name: text_box_3
+    properties: {appearance: outlined, label: '1.66'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'PUNJXM,XZDNSI FJWMAW,ZDWUYA'}
+    name: text_6
+    properties: {align: center, text: CHS}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'PUNJXM,XZDNSI DMYUKY,WRZLSV'}
+    name: text_box_5
+    properties: {appearance: outlined, label: '2'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'PUNJXM,JKDEYD CISVSV,CDSEEB'}
+    name: text_7
+    properties: {align: center, text: 'IPx, HEx, HLx'}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'PUNJXM,JKDEYD BDNAQQ,LQGONG'}
+    name: text_box_6
+    properties: {appearance: outlined, label: '2'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'LDOYMV,YMZATO'}
+    name: text_4
+    properties: {text: β}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'LDOYMV,VLAXEL MVLHTC,KWUSIT'}
+    name: text_8
+    properties: {align: center, text: RHS}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'LDOYMV,VLAXEL OAFLTS,ETAQNS'}
+    name: text_box_4
+    properties: {appearance: outlined, label: '1.66'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'LDOYMV,GYXYMI BKINGX,KVDLEB'}
+    name: text_9
+    properties: {align: center, text: CHS}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'LDOYMV,GYXYMI UGFJBA,KTKGXA'}
+    name: text_box_7
+    properties: {appearance: outlined, label: '2'}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'LDOYMV,IAYEUB JDRKQT,HWCKRP'}
+    name: text_10
+    properties: {align: center, text: 'IPx, HEx, HLx'}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'LDOYMV,IAYEUB OQUGME,NGDJAP'}
+    name: text_box_8
+    properties: {appearance: outlined, label: '1'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   layout_properties: {grid_position: 'TKTGQL,BZMRSL'}
   name: outlined_card_1
-  properties: {col_widths: '{"IQYMXA":10,"AGLXLS":50}', role: outlined-card}
+  properties: {col_widths: '{"IQYMXA":10,"AGLXLS":50,"QMBGHU":10,"UISDOE":50,"LGUNRA":15,"JGNOYR":25,"YMZATO":15,"VLAXEL":25,"XZDNSI":25,"JKDEYD":25,"GYXYMI":25,"IAYEUB":25,"PIUVZJ":10,"DAWIKD":50,"ISSJIO":10,"MSUEDI":50}', role: outlined-card}
   type: ColumnPanel
 container: {type: ColumnPanel}
 custom_component: true

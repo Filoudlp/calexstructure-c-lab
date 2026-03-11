@@ -20,7 +20,7 @@ class Layout_Calculation(Layout_CalculationTemplate):
     # self.layout.show_sidesheet = False
     # Any code you write here will run before the form opens.
 
-  def fun_show_sidesheet(self):
-    self.layout.show_sidesheet = True #False if self.layout.show_sidesheet else True
+  def fun_show_sidesheet(self, val:bool):
+    self.layout.show_sidesheet = val #False if self.layout.show_sidesheet else True
 
 

@@ -1,0 +1,115 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'PSMXJW,WEUWFV'}
+    name: text_1
+    properties: {text: Type de profilé}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'PSMXJW,IDQFNW'}
+    name: dropdown_menu_1
+    properties: {appearance: outlined}
+    type: form:dep_gqlhr7sei7ys7:_Components.DropdownMenu
+  layout_properties: {grid_position: 'DTUBZR,VJPYXU'}
+  name: outlined_card_1
+  properties: {col_widths: '{"WEUWFV":15,"IDQFNW":45}', role: outlined-card}
+  type: ColumnPanel
+- layout_properties: {grid_position: 'UTMCTQ,QOEYKD'}
+  name: text_2
+  properties: {text: 'Longueur [m]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'UTMCTQ,ZENYZO'}
+  name: text_box_1
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'WFRQBQ,BOWRSB'}
+  name: text_3
+  properties: {text: 'Angle [°]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'WFRQBQ,OSRZTQ'}
+  name: text_box_2
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'IHYULO,YAQVKD'}
+  name: text_4
+  properties: {text: 'b [mm]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'IHYULO,EMMUGC'}
+  name: text_box_3
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'QSCFDC,DGKVYQ'}
+  name: text_7
+  properties: {text: 'h [mm]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'QSCFDC,FRMUYS'}
+  name: text_box_4
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'VQIMAK,LXKPQD'}
+  name: text_8
+  properties: {text: 'e [mm]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'VQIMAK,GZWIIK'}
+  name: text_box_5
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'YLKFZL,GEJUJW'}
+  name: text_9
+  properties: {text: 'A [mm2]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'YLKFZL,HXQICB'}
+  name: text_box_7
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'PLNLRZ,PSTKOL'}
+  name: text_13
+  properties: {text: 'Av [mm2]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'PLNLRZ,FRSUDU'}
+  name: text_box_12
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'DNHQNU,VPHPCL'}
+  name: text_10
+  properties: {text: 'Iy [mm4]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'DNHQNU,FBZDPI'}
+  name: text_box_6
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'QAYXHQ,ZYIRYL'}
+  name: text_11
+  properties: {text: 'Iz [mm4]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'QAYXHQ,QLFXQC'}
+  name: text_box_8
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'HWZPGT,FBKFXV'}
+  name: text_5
+  properties: {text: 'Wy [mm3]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'HWZPGT,QJFJKT'}
+  name: text_box_9
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'ODJGNO,NSRIGU'}
+  name: text_12
+  properties: {text: 'Wz [mm3]'}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'ODJGNO,FOUSUJ'}
+  name: text_box_10
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+- layout_properties: {grid_position: 'TULLLO,MBVQUZ'}
+  name: text_6
+  properties: {text: Classe d'acier}
+  type: form:dep_gqlhr7sei7ys7:_Components.Text
+- layout_properties: {grid_position: 'TULLLO,UPEWWM'}
+  name: text_box_11
+  properties: {appearance: outlined}
+  type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+container:
+  properties: {col_widths: '{"QOEYKD":15,"ZENYZO":45,"BOWRSB":10,"OSRZTQ":32,"YAQVKD":15,"EMMUGC":45,"DGKVYQ":15,"FRMUYS":45,"LXKPQD":15,"GZWIIK":45,"VPHPCL":15,"FBZDPI":45,"GEJUJW":15,"HXQICB":45,"ZYIRYL":15,"QLFXQC":45,"FBKFXV":15,"QJFJKT":45,"NSRIGU":15,"FOUSUJ":45,"MBVQUZ":15,"UPEWWM":45,"PSTKOL":15,"FRSUDU":45}'}
+  type: ColumnPanel
+custom_component: true
+is_package: true

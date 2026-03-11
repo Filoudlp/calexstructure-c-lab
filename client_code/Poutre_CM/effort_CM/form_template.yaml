@@ -4,7 +4,11 @@ components:
     name: text_1
     properties: {text: 'Effort normal [kN] :'}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
-  - layout_properties: {grid_position: 'FJUALU,DTGMIX'}
+  - layout_properties: {grid_position: 'FJUALU,DTGMIX SNIRUV,GNHFEI'}
+    name: text_8
+    properties: {align: center, text: N}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'FJUALU,DTGMIX GXCECD,HYNBZY'}
     name: text_box_1
     properties: {appearance: outlined, label: ''}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -12,21 +16,45 @@ components:
     name: text_2
     properties: {text: 'Effort tranchant [kN] :'}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
-  - layout_properties: {grid_position: 'YUSTEU,VBFHZC'}
+  - layout_properties: {grid_position: 'YUSTEU,VBFHZC UAPDIG,HSPYTT'}
+    name: text_4
+    properties: {align: center, text: 'V,y'}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'YUSTEU,VBFHZC UAPDIG,IHHQCJ'}
+    name: text_5
+    properties: {align: center, text: 'V,z'}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'YUSTEU,VBFHZC JUUENZ,NIOLYZ'}
     name: text_box_3
     properties: {appearance: outlined, label: ''}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'YUSTEU,VBFHZC JUUENZ,EPEUPC'}
+    name: text_box_4
+    properties: {appearance: outlined}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'BHABTO,GJIAWB'}
     name: text_3
     properties: {text: 'Moment fléchissant [kN.m] :'}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
-  - layout_properties: {grid_position: 'BHABTO,NTJNTE'}
+  - layout_properties: {grid_position: 'BHABTO,AODDAN HKGQXT,YRMMSS'}
+    name: text_6
+    properties: {align: center, text: 'M,y'}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'BHABTO,AODDAN DYMZLB,XFYQTZ'}
     name: text_box_2
-    properties: {appearance: outlined, label: ''}
+    properties: {appearance: outlined}
+    type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+  - layout_properties: {grid_position: 'BHABTO,TYJMCM PUNZVA,ZSYCOD'}
+    name: text_7
+    properties: {align: center, text: 'M,z'}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {grid_position: 'BHABTO,TYJMCM RRMKHH,VTXFQV'}
+    name: text_box_5
+    properties: {appearance: outlined}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   layout_properties: {grid_position: 'ORTPFS,LQACHI'}
   name: outlined_card_1
-  properties: {col_widths: '{"GJIAWB":20,"NTJNTE":40,"LJHVAD":20,"VBFHZC":40,"SUIIZC":20,"DTGMIX":40}', role: outlined-card}
+  properties: {col_widths: '{"GJIAWB":20,"LJHVAD":20,"VBFHZC":40,"SUIIZC":20,"DTGMIX":40,"AODDAN":20,"TYJMCM":20}', role: outlined-card}
   type: ColumnPanel
 container: {type: ColumnPanel}
 custom_component: true
