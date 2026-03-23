@@ -35,8 +35,7 @@ class Form1(Form1Template):
     """This method is called when the primary button is clicked"""
 
     # 1. Validation de base des inputs
-    inputs = [self.tb_span.text, self.tb_gk.text, self.tb_qk.text]
-    print(42)
+    inputs = [float(self.tb_span.text), float(self.tb_gk.text), float(self.tb_qk.text)]
     if any(x is None or x <= 0 for x in inputs):
       alert("Veuillez saisir des valeurs numériques positives pour la géométrie et les charges.")
       return
