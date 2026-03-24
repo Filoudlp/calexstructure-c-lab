@@ -1,3 +1,11 @@
 .anvil-role-italic {
   font-style: italic;
 }
+/* Rôle pour les panneaux de saisie (Inputs) */
+.anvil-role-input-card {
+  background-color: #FFFFFF !important;
+  border-left: 4px solid #3498DB !important; /* Ligne bleue "Action" */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important; /* Ombre très douce */
+  border-radius: 4px;
+  padding: 15px;
+}

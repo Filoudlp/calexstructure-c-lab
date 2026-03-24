@@ -27,7 +27,9 @@ class Form1(Form1Template):
 
     # Remplir les listes déroulantes (statique pour le MVP, via Data Tables plus tard)
     self.dd_profile.items = ["IPE 200", "IPE 300", "HEA 200"]
+    self.dd_profile.selected_value = self.dd_profile.items[0]
     self.dd_steel.items = [("S235", "S235"), ("S355", "S355")]
+    self.dd_steel.selected_value = self.dd_steel.items[0][1]
     #self.loading_icon.visible = False # Spinner caché par défaut
 
   @handle("btn_calculate", "click")

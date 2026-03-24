@@ -45,7 +45,12 @@ components_by_slot:
         type: ColumnPanel
       layout_properties: {grid_position: 'CSWFAV,NZLOOZ'}
       name: column_panel_3
-      properties: {col_widths: '{"FDYRQC":45,"UQJSVK":15}'}
+      properties:
+        col_spacing: medium
+        col_widths: '{"FDYRQC":45,"UQJSVK":15}'
+        role: input-card
+        spacing:
+          margin: ['5', null, null, null]
       type: ColumnPanel
     - layout_properties: {grid_position: 'MZHBZF,QTVXHE VVTFXE,RHTGNX'}
       name: heading_2
@@ -53,16 +58,18 @@ components_by_slot:
       type: form:dep_gqlhr7sei7ys7:_Components.Heading
     - components:
       - layout_properties: {grid_position: 'SYRAAU,SEGGNZ'}
-        name: text_4
-        properties: {}
+        name: lbl_profile
+        properties:
+          text: |
+            Profilé
         type: form:dep_gqlhr7sei7ys7:_Components.Text
       - layout_properties: {grid_position: ''}
         name: dd_profile
         properties: {}
         type: form:dep_gqlhr7sei7ys7:_Components.DropdownMenu
       - layout_properties: {grid_position: ''}
-        name: text_5
-        properties: {}
+        name: lbl_span
+        properties: {text: 'Longeur de poutre [m]'}
         type: form:dep_gqlhr7sei7ys7:_Components.Text
       - layout_properties: {grid_position: 'IDWQXY,KBGERK'}
         name: tb_span
@@ -70,23 +77,23 @@ components_by_slot:
         type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
       - layout_properties: {grid_position: 'NJPOBJ,ZROSLD'}
         name: text_3
-        properties: {}
+        properties: {text: Nuance d'acier}
         type: form:dep_gqlhr7sei7ys7:_Components.Text
       - layout_properties: {grid_position: 'LZRABY,YCQYLU'}
         name: dd_steel
         properties: {}
         type: form:dep_gqlhr7sei7ys7:_Components.DropdownMenu
       - layout_properties: {grid_position: 'UYEJUC,IJAHLS FBNOOT,AFQSIJ'}
-        name: text_1
-        properties: {}
+        name: lbl_gk
+        properties: {text: 'G [kN/ml]'}
         type: form:dep_gqlhr7sei7ys7:_Components.Text
       - layout_properties: {grid_position: 'UYEJUC,IJAHLS DTITNM,SGCZBO'}
         name: tb_gk
         properties: {type: number}
         type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
       - layout_properties: {grid_position: 'UYEJUC,KKEEZW MBEQMA,KVTNZA'}
-        name: text_2
-        properties: {}
+        name: lbl_qk
+        properties: {text: 'Q [kN/ml]'}
         type: form:dep_gqlhr7sei7ys7:_Components.Text
       - layout_properties: {grid_position: 'UYEJUC,KKEEZW TPLHAY,QYBBOK'}
         name: tb_qk
@@ -95,48 +102,49 @@ components_by_slot:
       - event_bindings: {}
         layout_properties: {grid_position: 'FJSZPB,SJMRHX'}
         name: btn_calculate
-        properties: {}
+        properties: {text: Calculer}
         type: form:dep_gqlhr7sei7ys7:_Components.Button
-      - layout_properties: {grid_position: 'FJSZPB,AEAIRE'}
-        name: Icon
-        properties: {}
-        type: form:dep_gqlhr7sei7ys7:_Components.IconButton
       layout_properties: {grid_position: 'MZHBZF,QTVXHE MHIPGJ,KOESVD'}
       name: column_panel_1
-      properties: {}
+      properties: {role: input-card}
       type: ColumnPanel
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF TEPCII,LOJRCF'}
-      name: plot_moment
-      properties: {height: 258.33331298828125}
-      type: Plot
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF TEPCII,XYYNJL'}
-      name: plot_shear
-      properties: {height: 257.33331298828125}
-      type: Plot
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF CRWEOP,KUCXVG'}
-      name: text_9
-      properties: {text: 'ELU : '}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF CRWEOP,SUMXLH'}
-      name: text_10
-      properties: {text: 'ELS : '}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF ITLAVK,YLTWJA'}
-      name: divider_1
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Divider
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF MKVBOE,ABEMON'}
-      name: button_1
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Button
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF MKVBOE,KSHYSC'}
-      name: button_2
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Button
-    - layout_properties: {grid_position: 'MZHBZF,BCITVF MQOPEO,ZNBBXK'}
-      name: outlined_button_1
-      properties: {role: outlined-button, text: Détail des calculs}
-      type: Button
+    - components:
+      - layout_properties: {grid_position: 'SBDYWE,WQYHAJ ZMADVE,VFKAHP'}
+        name: plot_moment
+        properties: {height: 258.33331298828125}
+        type: Plot
+      - layout_properties: {grid_position: 'SBDYWE,WQYHAJ BEYVYO,SQUPRZ'}
+        name: lbl_elu
+        properties: {text: 'ELU : {{VAL_ELU}} %'}
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
+      - layout_properties: {grid_position: 'SBDYWE,DBJVRA ZOBPDV,LBXFJV'}
+        name: plot_shear
+        properties: {height: 257.33331298828125}
+        type: Plot
+      - layout_properties: {grid_position: 'SBDYWE,DBJVRA ESIHTW,UIAYEE'}
+        name: lbl_els
+        properties: {text: 'ELS : {{VAL_ELS}} %'}
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
+      - layout_properties: {grid_position: 'RBNNME,CAUZHF'}
+        name: divider_1
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:_Components.Divider
+      - layout_properties: {grid_position: 'THLURR,GIEXOI'}
+        name: btn_gen_pdf
+        properties: {text: Générer note PDF}
+        type: form:dep_gqlhr7sei7ys7:_Components.Button
+      - layout_properties: {grid_position: 'THLURR,FNFQGS'}
+        name: btn_gen_word
+        properties: {text: Générer note Word}
+        type: form:dep_gqlhr7sei7ys7:_Components.Button
+      - layout_properties: {grid_position: 'SVQGFT,MEGRPL'}
+        name: outlined_button_1
+        properties: {role: outlined-button, text: Détail des calculs}
+        type: Button
+      layout_properties: {grid_position: 'MZHBZF,BCITVF'}
+      name: outlined_card_1
+      properties: {role: input-card}
+      type: ColumnPanel
     layout_properties: {}
     name: column_panel_2
     properties: {}
