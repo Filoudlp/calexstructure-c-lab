@@ -1,9 +1,9 @@
 components:
-- layout_properties: {grid_position: 'UQOXLI,MBUECF'}
-  name: text_1
-  properties: {text: Résultat}
-  type: form:dep_gqlhr7sei7ys7:_Components.Text
 - components:
+  - layout_properties: {grid_position: 'IPIKMP,NNUWOC'}
+    name: text_1
+    properties: {text: Résultat}
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'YZQXTS,WPUMPU WRBYIK,SGCPIQ'}
     name: lbl_elu
     properties: {align: center, text: ELU}
@@ -38,7 +38,7 @@ components:
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   layout_properties: {grid_position: 'KEIKCO,DKXCTK'}
   name: outlined_card_1
-  properties: {role: outlined-card}
+  properties: {role: input-card}
   type: ColumnPanel
 container: {type: ColumnPanel}
 custom_component: true

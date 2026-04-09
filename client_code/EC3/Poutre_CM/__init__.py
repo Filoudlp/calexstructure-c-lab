@@ -24,8 +24,7 @@ class Poutre_CM(Poutre_CMTemplate):
   def btn_calc_click(self, **event_args):
     """This method is called when the component is clicked."""
     #self.layout.fun_show_sidesheet(False)
-    media_obj = anvil.server.call('make_plot')
-    self.plot_cm_1.img_pou.source = media_obj
+    pass
 
   @handle("btn_optional", "click")
   def btn_optional_click(self, **event_args):
