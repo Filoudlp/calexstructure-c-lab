@@ -7,8 +7,10 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import anvil.http
+import json
 
-from ..Layout_Calculation import Layout_Calculation
+from ...Layout_Calculation import Layout_Calculation
 
 
 class Poutre_CM(Poutre_CMTemplate):
@@ -17,6 +19,7 @@ class Poutre_CM(Poutre_CMTemplate):
     self.init_components(**properties)
     self.btn_optional_click()
     self.btn_detail_rslt_click()
+    print(42)
 
     # Any code you write here will run before the form opens.
 
@@ -24,7 +27,35 @@ class Poutre_CM(Poutre_CMTemplate):
   def btn_calc_click(self, **event_args):
     """This method is called when the component is clicked."""
     #self.layout.fun_show_sidesheet(False)
-    pass
+    # Récupère les inputs depuis l'interface
+    payload = {
+      "section": "IPE 80",    # "IPE 80"
+      "material": "self.dd_material.selected_value",  # "S235"
+      "length": "float(self.tb_length.text)",         # mm
+      "N": "float(self.tb_N.text or 0)",              # N
+      "Vz": "float(self.tb_Vz.text or 0)",            # N
+      "My": "float(self.tb_My.text or 0)",            # N.mm
+    }
+    API_URL = "https://alex25071.pythonanywhere.com/api/pou_cm"
+    try:
+      r = anvil.http.request("https://alex25071.pythonanywhere.com/api/health")
+      print(r)
+      print("All good")
+    except:
+      print("⚠️ Serveur indisponible")
+    # Appel API
+    try:
+      response = anvil.http.request(
+        url=API_URL,
+        method="POST",
+        data=json.dumps(payload),
+        headers={"Content-Type": "application/json"},
+        json=True,  # parse automatiquement la réponse JSON
+      )
+      print(response)
+
+    except anvil.http.HttpError as e:
+      print(f"Erreur : {e.status}")
 
   @handle("btn_optional", "click")
   def btn_optional_click(self, **event_args):
