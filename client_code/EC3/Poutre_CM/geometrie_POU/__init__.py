@@ -7,6 +7,8 @@ class geometrie_POU(geometrie_POUTemplate):
     self.init_components(**properties)
     self.btn_optionnal_click()
 
+    
+
     # Any code you write here will run before the form opens.
 
   @handle("btn_optionnal", "click")
