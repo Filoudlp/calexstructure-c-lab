@@ -19,7 +19,6 @@ class Poutre_CM(Poutre_CMTemplate):
     self.init_components(**properties)
     self.btn_optional_click()
     self.btn_detail_rslt_click()
-    print(42)
 
     # Any code you write here will run before the form opens.
 
@@ -45,7 +44,6 @@ class Poutre_CM(Poutre_CMTemplate):
         headers={"Content-Type": "application/json"},
         json=True,  # parse automatiquement la réponse JSON
       )
-      print(response)
 
     except anvil.http.HttpError as e:
       print(f"Erreur : {e.status}")

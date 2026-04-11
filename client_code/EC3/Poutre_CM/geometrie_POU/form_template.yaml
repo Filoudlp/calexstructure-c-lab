@@ -38,7 +38,8 @@ components:
       name: lbl_b
       properties: {text: 'b [mm]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'AWCIFQ,CCQLBQ'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'AWCIFQ,CCQLBQ'}
       name: txb_b
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -46,7 +47,8 @@ components:
       name: lbl_h
       properties: {text: 'h [mm]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'OYQNOH,XHTVSW'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'OYQNOH,XHTVSW'}
       name: txb_h
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -54,7 +56,8 @@ components:
       name: lbl_e
       properties: {text: 'e [mm]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'NYOSGK,VFGNQX'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'NYOSGK,VFGNQX'}
       name: txb_e
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -62,7 +65,8 @@ components:
       name: lbl_a
       properties: {text: 'A [mm2]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'OJOPOU,CSFHAN'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'OJOPOU,CSFHAN'}
       name: txb_A
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -70,7 +74,8 @@ components:
       name: lbl_av
       properties: {text: 'Av [mm2]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'ZEWAHY,PWRGKP'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'ZEWAHY,PWRGKP'}
       name: txb_Av
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -78,7 +83,8 @@ components:
       name: lbl_Iy
       properties: {text: 'Iy [mm4]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'WLMULS,IXNTYI'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'WLMULS,IXNTYI'}
       name: txb_Iy
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -86,7 +92,8 @@ components:
       name: lbl_Iz
       properties: {text: 'Iz [mm4]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'HQFGMV,OAEHVQ'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'HQFGMV,OAEHVQ'}
       name: txb_Iz
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -94,7 +101,8 @@ components:
       name: lbl_Wy
       properties: {text: 'Wy [mm3]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'GKYKVG,YNZNKE'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'GKYKVG,YNZNKE'}
       name: txb_Wy
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -102,7 +110,8 @@ components:
       name: lbl_Wz
       properties: {text: 'Wz [mm3]'}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'TBVYZV,HIVDAC'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'TBVYZV,HIVDAC'}
       name: txb_Wz
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
@@ -110,7 +119,8 @@ components:
       name: text_6
       properties: {text: Classe d'acier}
       type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'NXWKIL,PPBNCB'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'NXWKIL,PPBNCB'}
       name: text_box_11
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
