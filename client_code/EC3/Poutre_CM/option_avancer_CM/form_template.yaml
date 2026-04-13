@@ -1,42 +1,42 @@
 components:
 - components:
   - layout_properties: {grid_position: 'NCCWZL,PIUVZJ'}
-    name: text_11
+    name: lbl_els_lim
     properties:
       text: |-
         Déformée max
         L / X
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'NCCWZL,DAWIKD'}
-    name: text_box_9
+    name: txb_els_lim
     properties: {appearance: outlined, text: '500'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'OCQFHE,IQYMXA'}
-    name: text_1
+    name: lbl_gamma_m0
     properties: {text: γm0}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'OCQFHE,AGLXLS'}
-    name: text_box_1
+    name: txb_gamma_m0
     properties: {appearance: outlined, label: '', text: '1'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'OKTNFJ,QMBGHU'}
-    name: text_2
+    name: lbl_gamma_m1
     properties: {text: γm1}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'OKTNFJ,UISDOE'}
-    name: text_box_2
+    name: txb_gamma_m1
     properties: {appearance: outlined, text: '1'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'KOVNMM,ISSJIO'}
-    name: text_12
+    name: lbl_gamma_m2
     properties: {text: γm2}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'KOVNMM,MSUEDI'}
-    name: text_box_10
+    name: txb_gamma_m2
     properties: {appearance: outlined, text: '1,25'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'PUNJXM,LGUNRA'}
-    name: text_3
+    name: lbl_alpha
     properties: {text: α}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'PUNJXM,JGNOYR JTZZDQ,SWYOMI'}
@@ -44,7 +44,7 @@ components:
     properties: {align: center, text: RHS}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'PUNJXM,JGNOYR EHUPVF,PMIULF'}
-    name: text_box_3
+    name: txb_alpha_rhs_shs
     properties: {appearance: outlined, label: '1.66'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'PUNJXM,XZDNSI FJWMAW,ZDWUYA'}
@@ -52,7 +52,7 @@ components:
     properties: {align: center, text: CHS}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'PUNJXM,XZDNSI DMYUKY,WRZLSV'}
-    name: text_box_5
+    name: txb_alpha_chs
     properties: {appearance: outlined, label: '2'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'PUNJXM,JKDEYD CISVSV,CDSEEB'}
@@ -60,11 +60,11 @@ components:
     properties: {align: center, text: 'IPx, HEx, HLx'}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'PUNJXM,JKDEYD BDNAQQ,LQGONG'}
-    name: text_box_6
+    name: txb_alpha_i_h
     properties: {appearance: outlined, label: '2'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'LDOYMV,YMZATO'}
-    name: text_4
+    name: lbl_beta
     properties: {text: β}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'LDOYMV,VLAXEL MVLHTC,KWUSIT'}
@@ -72,7 +72,7 @@ components:
     properties: {align: center, text: RHS}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'LDOYMV,VLAXEL OAFLTS,ETAQNS'}
-    name: text_box_4
+    name: txb_beta_rhs_shs
     properties: {appearance: outlined, label: '1.66'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'LDOYMV,GYXYMI BKINGX,KVDLEB'}
@@ -80,7 +80,7 @@ components:
     properties: {align: center, text: CHS}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'LDOYMV,GYXYMI UGFJBA,KTKGXA'}
-    name: text_box_7
+    name: txb_beta_chs
     properties: {appearance: outlined, label: '2'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'LDOYMV,IAYEUB JDRKQT,HWCKRP'}
@@ -88,7 +88,7 @@ components:
     properties: {align: center, text: 'IPx, HEx, HLx'}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'LDOYMV,IAYEUB OQUGME,NGDJAP'}
-    name: text_box_8
+    name: txb_beta_i_h
     properties: {appearance: outlined, label: '1'}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   layout_properties: {grid_position: 'TKTGQL,BZMRSL'}

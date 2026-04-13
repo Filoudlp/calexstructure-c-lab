@@ -29,11 +29,34 @@ class Poutre_CM(Poutre_CMTemplate):
     # Récupère les inputs depuis l'interface
     payload = {
       "section": self.geometrie_1.ddm_section.value,    # "IPE 80"
-      "material": self.materiaux_cm_1.steel_grade_ddm.items,  # "S235"
       "length": self.geometrie_1.tbx_length.text,         # mm
-      "N": self.effort_cm_2.tbx_N.text,              # N
+      "angle": self.geometrie_1.tbx_angle.text,         # mm
+      "b": self.geometrie_1.tbx_b.text,
+      "h": self.geometrie_1.tbx_h.text,
+      "e": self.geometrie_1.tbx_e.text,
+      "A": self.geometrie_1.tbx_A.text,
+      "Avz": self.geometrie_1.tbx_Avz.text,
+      "Iy": self.geometrie_1.tbx_Iy.text,
+      "Iz": self.geometrie_1.tbx_Iz.text,
+      "Wy": self.geometrie_1.tbx_Wy.text,
+      "Wz": self.geometrie_1.tbx_Wz.text,
+      "steel_class": self.geometrie_1.tbx_steel_class.text,
+      "material": self.materiaux_cm_1.steel_grade_ddm.items,  # "S235"
+      "N": self.effort_cm_2.tbx_N.text,
+      "Vy": self.effort_cm_2.tbx_vy.text,
       "Vz": self.effort_cm_2.tbx_vz.text,            # N
-      "My": self.effort_cm_2.tbx_my.text,            # N.mm
+      "My": self.effort_cm_2.tbx_my.text,   
+      "Mz": self.effort_cm_2.tbx_mz.text,   # N.mm
+      "els_lim": self.option_avancer_cm_1.tbx_els_lim.text,
+      "gamma_m0": self.option_avancer_cm_1.tbx_gamma_m0.text,
+      "gamma_m1": self.option_avancer_cm_1.tbx_gamma_m1.text,
+      "gamma_m2": self.option_avancer_cm_1.tbx_gamma_m2.text,
+      "alpha_rhs_shs": self.option_avancer_cm_1.tbx_alpha_rhs_shs.text, 
+      "alpha_chs": self.option_avancer_cm_1.tbx_alpha_chs.text,
+      "alpha_i_h": self.option_avancer_cm_1.tbx_alpha_i_h.text, 
+      "beta_rhs_shs": self.option_avancer_cm_1.tbx_beta_rhs_shs.text, 
+      "beta_chs": self.option_avancer_cm_1.tbx_beta_chs.text,
+      "beta_i_h": self.option_avancer_cm_1.tbx_beta_i_h.text, 
     }
     API_URL = "https://alex25071.pythonanywhere.com/api/pou_cm"
     try:

@@ -4,7 +4,6 @@ import anvil.http
 import json
 
 class geometrie_POU(geometrie_POUTemplate):
-  _VAR_GEO = False
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -67,53 +66,3 @@ class geometrie_POU(geometrie_POUTemplate):
 
     except anvil.http.HttpError as e:
       print(f"Erreur : {e.status}")
-
-  @handle("txb_b", "change")
-  def txb_b_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_h", "change")
-  def txb_h_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_e", "change")
-  def txb_e_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_A", "change")
-  def txb_A_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_Av", "change")
-  def txb_Av_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_Iy", "change")
-  def txb_Iy_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_Iz", "change")
-  def txb_Iz_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_Wy", "change")
-  def txb_Wy_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("txb_Wz", "change")
-  def txb_Wz_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
-
-  @handle("text_box_11", "change")
-  def text_box_11_change(self, **event_args):
-    """This method is called when the text in this component is edited."""
-    self._VAR_GEO = True
