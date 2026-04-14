@@ -38,3 +38,8 @@ class NavMenu(NavMenuTemplate):
     alert(StripePricing(), large=True)
     self.check_upgrade_nav_link()
 
+  @handle("nvl_tool", "click")
+  def nvl_tool_click(self, **event_args):
+    """This method is called when the component is clicked"""
+    open_form('norme.EC3.Xlmt.Poutre_CM')
+
