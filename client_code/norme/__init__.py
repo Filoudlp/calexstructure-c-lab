@@ -7,6 +7,9 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+
+from .. import user_has_subscription
+
 # This is a package.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 #
@@ -25,6 +28,5 @@ def say_hello():
 def check_connected():
   if anvil.users.get_user():
     print("Connected my reuf")
-  if anvil.users.
-
-  require_user=user_has_subscription(["personal"])
+  if user_has_subscription:
+    print("Has subscription")
