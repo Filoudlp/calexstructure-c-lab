@@ -42,23 +42,12 @@ class geometrie_POU(geometrie_POUTemplate):
 
   @handle("ddm_section", "change")
   def ddm_section_change(self, **event_args):
-    """This method is called when an item is selected"""
-    
-    API_URL = "/section_steel_val"
-    payload = {
-      "section": self.ddm_section.selected_value,    # "IPE 80"
-    }
-    response = anvil.server.api_call(API_URL, payload)
-  
-    # Appel API
-    try:
-      response = anvil.http.request(
-        url=API_URL,
-        method="POST",
-        data=json.dumps(payload),
-        headers={"Content-Type": "application/json"},
-        json=True,  # parse automatiquement la réponse JSON
-      )
+      """This method is called when an item is selected"""
+      API_URL = "/section_steel_val"
+      payload = {
+        "section": self.ddm_section.selected_value,    # "IPE 80"
+      }
+      response = anvil.server.api_call(API_URL, payload)
       self.txb_b.text = response["section_properties"]["b"]
       self.txb_h.text = response["section_properties"]["h"]
       self.txb_e.text = response["section_properties"]["e"]
@@ -68,6 +57,3 @@ class geometrie_POU(geometrie_POUTemplate):
       self.txb_Iz.text = response["section_properties"]["Iz"]
       self.txb_Wy.text = response["section_properties"]["Wy"]
       self.txb_Wz.text = response["section_properties"]["Wz"]
-
-    except anvil.http.HttpError as e:
-      print(f"Erreur : {e.status}")

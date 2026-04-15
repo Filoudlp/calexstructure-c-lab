@@ -14,7 +14,7 @@ def api_call(api_url, payload_json):
     et renvoie le JSON de résultat.
     """
   url = f"{API_BASE_URL}{api_url}"
-
+  print(STR_LIB_KEY)
   headers = {
     "Content-Type": "application/json",
     "X-API-KEY": API_KEY # Authentification
