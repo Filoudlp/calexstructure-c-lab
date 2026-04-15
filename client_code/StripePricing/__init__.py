@@ -1,5 +1,6 @@
 from ._anvil_designer import StripePricingTemplate
 from anvil import *
+from routing import router
 import stripe.checkout
 import m3.components as m3
 import anvil.google.auth, anvil.google.drive

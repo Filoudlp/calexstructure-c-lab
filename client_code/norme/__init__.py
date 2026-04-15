@@ -1,3 +1,4 @@
+from routing import router
 import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive
@@ -14,8 +15,9 @@ from anvil.tables import app_tables
 #    Package1.say_hello()
 #
 
-def poutre_cm():
-  open_form('norme.EC3.Xlmt.Poutre_CM') 
+#@anvil.server.route("/hello")
+#def poutre_cm(**p):
+#  open_form('norme.EC3.Xlmt.Poutre_CM') 
 
 def say_hello():
   print("Hello, world")
