@@ -1,3 +1,4 @@
+import anvil.stripe
 import anvil.google.auth, anvil.google.drive, anvil.google.mail
 from anvil.google.drive import app_files
 import anvil.email
@@ -21,6 +22,7 @@ stripe.api_key = anvil.secrets.get_secret('stripe_secret_api_key')
 def get_prices():
   # Retrieve all prices
   prices = stripe.Price.list()
+  print(prices)
 
   # Extract and return the prices with product names
   prices_with_product_details = {}

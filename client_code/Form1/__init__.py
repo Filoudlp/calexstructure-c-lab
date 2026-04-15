@@ -16,6 +16,7 @@
     # Any code you write here will run before the form opens.
 from ._anvil_designer import Form1Template
 from anvil import *
+import stripe.checkout
 import m3.components as m3
 import anvil.server
 import plotly.graph_objects as go

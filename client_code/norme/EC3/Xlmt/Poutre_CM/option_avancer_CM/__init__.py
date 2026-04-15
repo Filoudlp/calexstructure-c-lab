@@ -1,4 +1,5 @@
 from ._anvil_designer import option_avancer_CMTemplate
+import stripe.checkout
 import m3.components as m3
 from anvil import handle
 

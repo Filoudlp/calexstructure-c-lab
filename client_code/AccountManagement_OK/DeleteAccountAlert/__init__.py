@@ -1,5 +1,6 @@
 from ._anvil_designer import DeleteAccountAlertTemplate
 from anvil import *
+import stripe.checkout
 import m3.components as m3
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files

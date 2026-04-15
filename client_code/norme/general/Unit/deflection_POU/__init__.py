@@ -1,5 +1,6 @@
 from ._anvil_designer import deflection_POUTemplate
 from anvil import *
+import stripe.checkout
 import m3.components as m3
 import anvil.server
 import anvil.google.auth, anvil.google.drive

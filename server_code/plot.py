@@ -1,3 +1,4 @@
+import anvil.stripe
 import anvil.server
 import anvil.mpl_util
 import numpy as np

@@ -1,4 +1,5 @@
 from ._anvil_designer import geometrie_POUTemplate
+import stripe.checkout
 import m3.components as m3
 from anvil import handle
 import anvil.http

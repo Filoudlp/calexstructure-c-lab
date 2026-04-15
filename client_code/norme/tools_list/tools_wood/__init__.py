@@ -1,5 +1,6 @@
 from ._anvil_designer import tools_woodTemplate
 from anvil import *
+import stripe.checkout
 import m3.components as m3
 import anvil.server
 import anvil.google.auth, anvil.google.drive

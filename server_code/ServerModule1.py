@@ -1,3 +1,4 @@
+import anvil.stripe
 import anvil.server
 import anvil.http
 import json
