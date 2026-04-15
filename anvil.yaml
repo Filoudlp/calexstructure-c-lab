@@ -66,7 +66,7 @@ db_schema:
 dependencies:
 - dep_id: dep_gqlhr7sei7ys7
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
-  version: {version_tag: v1.2.6}
+  version: {version_tag: v1.2.1}
 - dep_id: dep_a0x16fexact7tf
   resolution_hints: {app_id: 3PIDO5P3H4VPEMPL, name: routing, package_name: routing}
   version: {version_tag: v0.6.1}

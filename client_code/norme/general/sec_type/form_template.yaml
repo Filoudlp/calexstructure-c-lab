@@ -1,16 +1,16 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'HFVBYV,JTYEGX'}
+  - layout_properties: {grid_position: 'LVROME,TZPFKO'}
     name: lbl_sec_type
-    properties: {text: Type de section}
+    properties: {align: left, text: Type de section}
     type: form:dep_gqlhr7sei7ys7:_Components.Text
-  - layout_properties: {grid_position: 'HFVBYV,IXFJEN'}
+  - layout_properties: {grid_position: 'LVROME,QEERVF'}
     name: ddm_sec_type
-    properties: {appearance: outlined}
+    properties: {appearance: outlined, visible: true}
     type: form:dep_gqlhr7sei7ys7:_Components.DropdownMenu
-  layout_properties: {grid_position: 'UTNHLL,TECJMZ'}
+  layout_properties: {grid_position: 'IPSLQH,MEZMQH'}
   name: outlined_card_1
-  properties: {col_widths: '{"JTYEGX":15,"IXFJEN":45}', role: outlined-card}
+  properties: {role: outlined-card}
   type: ColumnPanel
 container: {type: ColumnPanel}
 custom_component: true

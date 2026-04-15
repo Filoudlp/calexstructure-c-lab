@@ -20,10 +20,11 @@ from ..... import norme
 class Poutre_CM(Poutre_CMTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    norme.check_connectednsub(var=self) 
     self.init_components(**properties)
     self.btn_optional_click()
     self.btn_detail_rslt_click()
-    norme.check_connected() 
+    #
 
     # Any code you write here will run before the form opens.
 

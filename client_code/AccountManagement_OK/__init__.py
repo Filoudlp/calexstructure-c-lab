@@ -51,3 +51,8 @@ class AccountManagement_OK(AccountManagement_OKTemplate):
       anvil.server.call('delete_user')
       anvil.users.logout()
       open_form('LoginPage')
+
+  @handle("manage_subscription_link", "click")
+  def manage_subscription_link_click(self, **event_args):
+    """This method is called clicked"""
+    pass
