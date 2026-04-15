@@ -33,7 +33,7 @@ def check_connectednsub(var):
       open_form('Landing_LoginPage')
 
   user = anvil.users.get_user()
-  if user["subscription"] == "Abonnement C-Lab":
+  if user["subscription"] != "Abonnement C-Lab":
     print('bien ouej mon reuf')
   else:
     print("no subscription")

@@ -1,8 +1,7 @@
 from ._anvil_designer import geometrie_POUTemplate
 from routing import router
 import stripe.checkout
-import m3.components as m3
-from anvil import handle
+from anvil import handle, server
 import anvil.http
 import json
 
@@ -44,10 +43,13 @@ class geometrie_POU(geometrie_POUTemplate):
   @handle("ddm_section", "change")
   def ddm_section_change(self, **event_args):
     """This method is called when an item is selected"""
-    API_URL = "https://alex25071.pythonanywhere.com/section_steel_val"
+    
+    API_URL = "/section_steel_val"
     payload = {
       "section": self.ddm_section.selected_value,    # "IPE 80"
     }
+    response = anvil.server.api_call(API_URL, payload)
+  
     # Appel API
     try:
       response = anvil.http.request(

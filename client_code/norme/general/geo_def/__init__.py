@@ -8,7 +8,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from routing import router
 import stripe.checkout
-import m3.components as m3
 from anvil import handle
 import anvil.http
 import json
@@ -67,9 +66,6 @@ class geo_def(geo_defTemplate):
       )
       self.txb_b.text = response["section_properties"]["b"]
       self.txb_h.text = response["section_properties"]["h"]
-      self.txb_e.text = response["section_properties"]["e"]
-      self.txb_A.text = response["section_properties"]["A"]
-      self.txb_Av.text = response["section_properties"]["Av"]
       self.txb_Iy.text = response["section_properties"]["Iy"]
       self.txb_Iz.text = response["section_properties"]["Iz"]
       self.txb_Wy.text = response["section_properties"]["Wy"]

@@ -2,7 +2,6 @@ from ._anvil_designer import Poutre_CMTemplate
 from anvil import *
 from routing import router
 import stripe.checkout
-import m3.components as m3
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
 import anvil.server
@@ -15,7 +14,6 @@ import json
 
 from .....Layout_Calculation import Layout_Calculation
 from ..... import norme
-
 
 class Poutre_CM(Poutre_CMTemplate):
   def __init__(self, **properties):

@@ -1,7 +1,6 @@
 from ._anvil_designer import Plot_CMTemplate
 from routing import router
 import stripe.checkout
-import m3.components as m3
 from anvil import handle
 
 class Plot_CM(Plot_CMTemplate):

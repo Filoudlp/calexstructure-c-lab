@@ -17,5 +17,9 @@ components_by_slot:
     name: sec_type_1
     properties: {}
     type: form:norme.general.sec_type
+  - layout_properties: {}
+    name: geo_def_1
+    properties: {}
+    type: form:norme.general.geo_def
 is_package: true
 layout: {type: 'form:Layout_Calculation'}

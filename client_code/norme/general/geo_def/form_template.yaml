@@ -44,33 +44,6 @@ components:
       name: txb_h
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
-    - layout_properties: {grid_position: 'NYOSGK,AYAETZ'}
-      name: lbl_e
-      properties: {text: 'e [mm]'}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - event_bindings: {}
-      layout_properties: {grid_position: 'NYOSGK,VFGNQX'}
-      name: txb_e
-      properties: {appearance: outlined}
-      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
-    - layout_properties: {grid_position: 'OJOPOU,RFUUXP'}
-      name: lbl_a
-      properties: {text: 'A [mm2]'}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - event_bindings: {}
-      layout_properties: {grid_position: 'OJOPOU,CSFHAN'}
-      name: txb_A
-      properties: {appearance: outlined}
-      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
-    - layout_properties: {grid_position: 'ZEWAHY,AOYLAZ'}
-      name: lbl_av
-      properties: {text: 'Av [mm2]'}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - event_bindings: {}
-      layout_properties: {grid_position: 'ZEWAHY,PWRGKP'}
-      name: txb_Av
-      properties: {appearance: outlined}
-      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
     - layout_properties: {grid_position: 'WLMULS,SJJFLW'}
       name: lbl_Iy
       properties: {text: 'Iy [mm4]'}
@@ -89,36 +62,9 @@ components:
       name: txb_Iz
       properties: {appearance: outlined}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
-    - layout_properties: {grid_position: 'GKYKVG,XNYSXZ'}
-      name: lbl_Wy
-      properties: {text: 'Wy [mm3]'}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - event_bindings: {}
-      layout_properties: {grid_position: 'GKYKVG,YNZNKE'}
-      name: txb_Wy
-      properties: {appearance: outlined}
-      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
-    - layout_properties: {grid_position: 'TBVYZV,UGWGNA'}
-      name: lbl_Wz
-      properties: {text: 'Wz [mm3]'}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - event_bindings: {}
-      layout_properties: {grid_position: 'TBVYZV,HIVDAC'}
-      name: txb_Wz
-      properties: {appearance: outlined}
-      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
-    - layout_properties: {grid_position: 'NXWKIL,LWBGIZ'}
-      name: lbl_steelclass
-      properties: {text: Classe d'acier}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - event_bindings: {}
-      layout_properties: {grid_position: 'NXWKIL,PPBNCB'}
-      name: txb_steelclass
-      properties: {appearance: outlined}
-      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
     layout_properties: {grid_position: 'NIYOWQ,HUJJNE'}
     name: box_optional
-    properties: {col_widths: '{"XOKMEZ":15,"CCQLBQ":45,"OSZJTL":15,"XHTVSW":45,"AYAETZ":15,"VFGNQX":45,"RFUUXP":15,"CSFHAN":45,"AOYLAZ":15,"PWRGKP":45,"SJJFLW":15,"IXNTYI":45,"PURCOO":15,"OAEHVQ":45,"XNYSXZ":15,"YNZNKE":45,"UGWGNA":15,"HIVDAC":45,"LWBGIZ":15,"PPBNCB":45}', role: null}
+    properties: {col_widths: '{"XOKMEZ":15,"CCQLBQ":45,"OSZJTL":15,"XHTVSW":45,"SJJFLW":15,"IXNTYI":45,"PURCOO":15,"OAEHVQ":45,"PPBNCB":45}', role: null}
     type: ColumnPanel
   layout_properties: {grid_position: 'DTUBZR,VJPYXU'}
   name: outlined_card_1

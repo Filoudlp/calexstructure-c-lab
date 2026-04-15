@@ -2,7 +2,6 @@ from ._anvil_designer import tools_rdmTemplate
 from anvil import *
 from routing import router
 import stripe.checkout
-import m3.components as m3
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -40,3 +39,8 @@ class tools_rdm(tools_rdmTemplate):
       self.tgicbtn_lmt.icon = "mi:arrow_circle_right"
       self.tgicbtn_lmt.selected = False
       self.otld_lmt.visible = False
+
+  @handle("btn_deflection", "click")
+  def btn_deflection_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('norme.general.Unit.deflection_POU')

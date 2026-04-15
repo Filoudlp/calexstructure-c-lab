@@ -1,7 +1,6 @@
 from ._anvil_designer import option_avancer_CMTemplate
 from routing import router
 import stripe.checkout
-import m3.components as m3
 from anvil import handle
 
 class option_avancer_CM(option_avancer_CMTemplate):

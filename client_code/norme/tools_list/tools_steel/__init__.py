@@ -2,7 +2,6 @@ from ._anvil_designer import tools_steelTemplate
 from anvil import *
 from routing import router
 import stripe.checkout
-import m3.components as m3
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -40,3 +39,8 @@ class tools_steel(tools_steelTemplate):
       self.tgicbtn_lmt.icon = "mi:arrow_circle_right"
       self.tgicbtn_lmt.selected = False
       self.otld_lmt.visible = False
+
+  @handle("btn_pou", "click")
+  def btn_pou_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('norme.EC3.Xlmt.Poutre_CM')

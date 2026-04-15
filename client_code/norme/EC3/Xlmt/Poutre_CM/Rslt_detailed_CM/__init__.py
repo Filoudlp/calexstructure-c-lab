@@ -2,7 +2,6 @@ from ._anvil_designer import Rslt_detailed_CMTemplate
 from anvil import *
 from routing import router
 import stripe.checkout
-import m3.components as m3
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files

@@ -2,7 +2,6 @@ from ._anvil_designer import NavMenuTemplate
 from anvil import *
 from routing import router
 import stripe.checkout
-import m3.components as m3
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
 import anvil.tables as tables
@@ -10,6 +9,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 import anvil.server
+
+from routing.router import navigate
 
 from ..StripePricing import StripePricing
 
@@ -53,3 +54,8 @@ class NavMenu(NavMenuTemplate):
     """This method is called when the component is clicked"""
     anvil.users.logout()
     open_form('Landing_LoginPage')
+
+  @handle("navigation_link_1", "click")
+  def navigation_link_1_click(self, **event_args):
+    """This method is called when the component is clicked"""
+    navigate(path="/poutre_cm")
