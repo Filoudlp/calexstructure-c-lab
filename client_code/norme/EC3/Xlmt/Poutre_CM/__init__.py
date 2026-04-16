@@ -61,19 +61,8 @@ class Poutre_CM(Poutre_CMTemplate):
       "beta_chs": self.option_avancer_cm_1.txb_beta_chs.text,
       "beta_i_h": self.option_avancer_cm_1.txb_beta_i_h.text, 
     }
-    print(payload)
-    API_URL = "https://alex25071.pythonanywhere.com/api/pou_cm"
-    try:
-      response = anvil.http.request(
-        url=API_URL,
-        method="POST",
-        data=json.dumps(payload),
-        headers={"Content-Type": "application/json"},
-        json=True,  # parse automatiquement la réponse JSON
-      )
-
-    except anvil.http.HttpError as e:
-      print(f"Erreur : {e.status}")
+    API_URL = "/api/pou_cm"
+    response = norme.api_call(API_URL, payload)
 
   @handle("btn_optional", "click")
   def btn_optional_click(self, **event_args):

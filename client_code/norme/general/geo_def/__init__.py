@@ -12,6 +12,8 @@ from anvil import handle
 import anvil.http
 import json
 
+from .... import norme
+
 
 class geo_def(geo_defTemplate):
   def __init__(self, **properties):
@@ -51,25 +53,18 @@ class geo_def(geo_defTemplate):
   @handle("ddm_section", "change")
   def ddm_section_change(self, **event_args):
     """This method is called when an item is selected"""
-    API_URL = "https://alex25071.pythonanywhere.com/section_steel_val"
+
+    API_URL = "/section_steel_val"
     payload = {
       "section": self.ddm_section.selected_value,  # "IPE 80"
     }
-    # Appel API
-    try:
-      response = anvil.http.request(
-        url=API_URL,
-        method="POST",
-        data=json.dumps(payload),
-        headers={"Content-Type": "application/json"},
-        json=True,  # parse automatiquement la réponse JSON
-      )
-      self.txb_b.text = response["section_properties"]["b"]
-      self.txb_h.text = response["section_properties"]["h"]
-      self.txb_Iy.text = response["section_properties"]["Iy"]
-      self.txb_Iz.text = response["section_properties"]["Iz"]
-      self.txb_Wy.text = response["section_properties"]["Wy"]
-      self.txb_Wz.text = response["section_properties"]["Wz"]
+    response = norme.api_call(API_URL, payload)
+    self.txb_b.text = response["section_properties"]["b"]
+    self.txb_h.text = response["section_properties"]["h"]
+    self.txb_Iy.text = response["section_properties"]["Iy"]
+    self.txb_Iz.text = response["section_properties"]["Iz"]
+    self.txb_Wy.text = response["section_properties"]["Wy"]
+    self.txb_Wz.text = response["section_properties"]["Wz"]
 
     except anvil.http.HttpError as e:
       print(f"Erreur : {e.status}")

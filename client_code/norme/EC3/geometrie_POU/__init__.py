@@ -4,6 +4,7 @@ import stripe.checkout
 from anvil import handle, server
 import anvil.http
 import json
+from .... import norme
 
 class geometrie_POU(geometrie_POUTemplate):
   def __init__(self, **properties):
@@ -11,24 +12,14 @@ class geometrie_POU(geometrie_POUTemplate):
     self.init_components(**properties)
     self.btn_optionnal_click()
 
-    API_URL = "https://alex25071.pythonanywhere.com/section_steel"
-    # Appel API
-    try:
-      response = anvil.http.request(
-        url=API_URL,
-        method="POST",
-        headers={"Content-Type": "application/json"},
-        json=True,  # parse automatiquement la réponse JSON
-      )
-      self.item_list = []
-      for row in response["liste"]:
-        self.item_list.append(row)
-      self.ddm_section.items = self.item_list
-      self.ddm_section.selected_value = self.ddm_section.items[0]
-      self.ddm_section_change()
-
-    except anvil.http.HttpError as e:
-      print(f"Erreur : {e.status}")
+    API_URL = "/section_steel"
+    response = norme.api_call(API_URL)
+    self.item_list = []
+    for row in response["liste"]:
+      self.item_list.append(row)
+    self.ddm_section.items = self.item_list
+    self.ddm_section.selected_value = self.ddm_section.items[0]
+    self.ddm_section_change()
 
   @handle("btn_optionnal", "click")
   def btn_optionnal_click(self, **event_args):
@@ -47,7 +38,7 @@ class geometrie_POU(geometrie_POUTemplate):
       payload = {
         "section": self.ddm_section.selected_value,    # "IPE 80"
       }
-      response = anvil.server.api_call(API_URL, payload)
+      response = norme.api_call(API_URL, payload)#anvil.server.call('api_call', API_URL, payload)
       self.txb_b.text = response["section_properties"]["b"]
       self.txb_h.text = response["section_properties"]["h"]
       self.txb_e.text = response["section_properties"]["e"]
