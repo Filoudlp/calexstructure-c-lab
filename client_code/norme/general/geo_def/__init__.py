@@ -20,25 +20,8 @@ class geo_def(geo_defTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.btn_optionnal_click()
+    self.instance_steel()
 
-    API_URL = "https://alex25071.pythonanywhere.com/section_steel"
-    # Appel API
-    try:
-      response = anvil.http.request(
-        url=API_URL,
-        method="POST",
-        headers={"Content-Type": "application/json"},
-        json=True,  # parse automatiquement la réponse JSON
-      )
-      self.item_list = []
-      for row in response["liste"]:
-        self.item_list.append(row)
-      self.ddm_section.items = self.item_list
-      self.ddm_section.selected_value = self.ddm_section.items[0]
-      self.ddm_section_change()
-
-    except anvil.http.HttpError as e:
-      print(f"Erreur : {e.status}")
 
   @handle("btn_optionnal", "click")
   def btn_optionnal_click(self, **event_args):
@@ -50,6 +33,17 @@ class geo_def(geo_defTemplate):
       self.btn_optionnal.icon = "fa:arrow-down"
       self.box_optional.visible = True
 
+  def instance_steel(self):
+    API_URL = "/section_steel"
+    response = norme.api_call(API_URL)
+    
+    self.item_list = []
+    for row in response["liste"]:
+      self.item_list.append(row)
+    self.ddm_section.items = self.item_list
+    self.ddm_section.selected_value = self.ddm_section.items[0]
+    self.ddm_section_change()
+
   @handle("ddm_section", "change")
   def ddm_section_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -59,12 +53,8 @@ class geo_def(geo_defTemplate):
       "section": self.ddm_section.selected_value,  # "IPE 80"
     }
     response = norme.api_call(API_URL, payload)
+    
     self.txb_b.text = response["section_properties"]["b"]
     self.txb_h.text = response["section_properties"]["h"]
     self.txb_Iy.text = response["section_properties"]["Iy"]
     self.txb_Iz.text = response["section_properties"]["Iz"]
-    self.txb_Wy.text = response["section_properties"]["Wy"]
-    self.txb_Wz.text = response["section_properties"]["Wz"]
-
-    except anvil.http.HttpError as e:
-      print(f"Erreur : {e.status}")

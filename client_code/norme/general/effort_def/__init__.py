@@ -1,8 +1,8 @@
-from ._anvil_designer import sec_typeTemplate
+from ._anvil_designer import effort_defTemplate
 from anvil import *
+import anvil.server
 from routing import router
 import stripe.checkout
-import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
 import anvil.users
@@ -11,15 +11,9 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class sec_type(sec_typeTemplate):
+class effort_def(effort_defTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.item_list = []
-    response = ["Acier", "Béton", "Bois"]
-    for row in response:
-      self.item_list.append(row)
-    self.ddm_sec_type.items = self.item_list
-    self.ddm_sec_type.selected_value = self.ddm_sec_type.items[0]
 
     # Any code you write here will run before the form opens.

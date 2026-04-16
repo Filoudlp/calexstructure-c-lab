@@ -21,5 +21,14 @@ components_by_slot:
     name: geo_def_1
     properties: {}
     type: form:norme.general.geo_def
+  - layout_properties: {}
+    name: effort_def_1
+    properties: {}
+    type: form:norme.general.effort_def
+  - event_bindings: {}
+    layout_properties: {}
+    name: btn_calc
+    properties: {align: center, text: Calculer}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
 is_package: true
 layout: {type: 'form:Layout_Calculation'}
