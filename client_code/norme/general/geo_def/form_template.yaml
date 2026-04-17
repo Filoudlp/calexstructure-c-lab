@@ -19,7 +19,7 @@ components:
     type: form:dep_gqlhr7sei7ys7:_Components.Text
   - layout_properties: {grid_position: 'ZPMQYN,OTSSUE'}
     name: txb_length
-    properties: {appearance: outlined}
+    properties: {appearance: outlined, type: number}
     type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
   - layout_properties: {grid_position: 'MAJQQN,MOBXRB'}
     name: btn_optionnal
@@ -33,7 +33,7 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'AWCIFQ,CCQLBQ'}
       name: txb_b
-      properties: {appearance: outlined}
+      properties: {appearance: outlined, type: number}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
     - layout_properties: {grid_position: 'OYQNOH,OSZJTL'}
       name: lbl_h
@@ -42,7 +42,7 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'OYQNOH,XHTVSW'}
       name: txb_h
-      properties: {appearance: outlined}
+      properties: {appearance: outlined, type: number}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
     - event_bindings: {}
       layout_properties: {grid_position: 'TTQKWH,BPIZLP'}
@@ -52,7 +52,7 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'TTQKWH,SOHQZO'}
       name: txb_A
-      properties: {appearance: outlined}
+      properties: {appearance: outlined, type: number}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
     - layout_properties: {grid_position: 'WLMULS,SJJFLW'}
       name: lbl_Iy
@@ -61,7 +61,7 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'WLMULS,IXNTYI'}
       name: txb_Iy
-      properties: {appearance: outlined}
+      properties: {appearance: outlined, type: number}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
     - layout_properties: {grid_position: 'HQFGMV,PURCOO'}
       name: lbl_Iz
@@ -70,7 +70,7 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'HQFGMV,OAEHVQ'}
       name: txb_Iz
-      properties: {appearance: outlined}
+      properties: {appearance: outlined, type: number}
       type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
     layout_properties: {grid_position: 'NIYOWQ,HUJJNE'}
     name: box_optional

@@ -33,7 +33,7 @@ class deflection_POU(deflection_POUTemplate):
       "A": self.geo_def_1.txb_A.text,
       "Iy": self.geo_def_1.txb_Iy.text,
       "Iz": self.geo_def_1.txb_Iz.text,
-      "load": self.geo_def_1.txb_load.text,
+      "load": self.effort_def_1.txb_load.text,
     }
     response = norme.api_call(API_URL, payload)
     print(response)

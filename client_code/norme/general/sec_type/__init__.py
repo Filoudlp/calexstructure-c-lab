@@ -21,6 +21,7 @@ class sec_type(sec_typeTemplate):
       self.item_list.append(row)
     self.ddm_sec_type.items = self.item_list
     self.ddm_sec_type.selected_value = self.ddm_sec_type.items[0]
+    self.ddm_sec_type_change()
 
     # Any code you write here will run before the form opens.
 

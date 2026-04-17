@@ -36,3 +36,8 @@ class Landing_LoginPage(Landing_LoginPageTemplate):
     pass
     #if anvil.users.get_user():
      # open_form('norme.EC3.Xlmt.Poutre_CM')
+
+  @handle("outlined_button_1", "click")
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    navigate(path="/deflection")
