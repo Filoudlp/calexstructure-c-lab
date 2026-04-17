@@ -26,14 +26,14 @@ class deflection_POU(deflection_POUTemplate):
     """This method is called when the component is clicked."""
     API_URL = "/api/deflection_calc"
     payload = {
-      "length": self.geo_def_1.txb_length.text,
-      "E": self.sec_type_1.tbx_E.text,
-      "b": self.geo_def_1.txb_b.text,
-      "h": self.geo_def_1.txb_h.text,
-      "A": self.geo_def_1.txb_A.text,
-      "Iy": self.geo_def_1.txb_Iy.text,
-      "Iz": self.geo_def_1.txb_Iz.text,
-      "load": self.effort_def_1.txb_load.text,
+      "length": float(self.geo_def_1.txb_length.text,
+      "E": float(self.sec_type_1.tbx_E.text),
+      "b": float(self.geo_def_1.txb_b.text),
+      "h": float(self.geo_def_1.txb_h.text),
+      "A": float(self.geo_def_1.txb_A.text),
+      "Iy": float(self.geo_def_1.txb_Iy.text),
+      "Iz": float(self.geo_def_1.txb_Iz.text),
+      "load": float(self.effort_def_1.txb_load.text),
     }
     response = norme.api_call(API_URL, payload)
     print(response)
