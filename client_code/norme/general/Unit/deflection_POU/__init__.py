@@ -26,7 +26,7 @@ class deflection_POU(deflection_POUTemplate):
     """This method is called when the component is clicked."""
     API_URL = "/api/deflection_calc"
     payload = {
-      "length": float(self.geo_def_1.txb_length.text,
+      "length": float(self.geo_def_1.txb_length.text),
       "E": float(self.sec_type_1.tbx_E.text),
       "b": float(self.geo_def_1.txb_b.text),
       "h": float(self.geo_def_1.txb_h.text),
