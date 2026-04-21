@@ -10,6 +10,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from ..... import norme
 
 class compression(compressionTemplate):
   def __init__(self, **properties):
@@ -63,6 +64,10 @@ class compression(compressionTemplate):
     self.option_avancer_cm_1.txb_alpha_rhs_shs.visible = False
     self.option_avancer_cm_1.txb_alpha_i_h.visible = False
     self.option_avancer_cm_1.txb_els_lim.visible = False
+    self.option_avancer_cm_1.lbl_gamma_m1.visible = False
+    self.option_avancer_cm_1.lbl_gamma_m2.visible = False
+    self.option_avancer_cm_1.txb_gamma_m1.visible = False
+    self.option_avancer_cm_1.txb_gamma_m2.visible = False
 
     self.btn_optional_click()
     self.layout.fun_show_sidesheet(False)
@@ -82,4 +87,11 @@ class compression(compressionTemplate):
   @handle("btn_calc", "click")
   def btn_calc_click(self, **event_args):
     """This method is called when the component is clicked."""
-    pass  # Write Code Here
+    API_URL = "/api/cm_compression_calc"
+    payload = {
+      "fy": float(self.materiaux_cm_1.steel_grade_ddm.selected_value),
+      "gamma_m0": float(self.option_avancer_cm_1.txb_gamma_m0.text),
+      "A": float(self.geo_def_1.txb_A.text),
+      "load": float(self.effort_normal_1.txb_load.text),
+    }
+    response = norme.api_call(API_URL, payload)
