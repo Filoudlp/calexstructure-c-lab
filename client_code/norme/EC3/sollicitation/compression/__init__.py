@@ -88,10 +88,15 @@ class compression(compressionTemplate):
   def btn_calc_click(self, **event_args):
     """This method is called when the component is clicked."""
     API_URL = "/api/cm_compression_calc"
+    fy = self.materiaux_cm_1.steel_grade_ddm.selected_value[0][1]
     payload = {
-      "fy": float(self.materiaux_cm_1.steel_grade_ddm.selected_value),
+      "fy": float(fy[1:]),
       "gamma_m0": float(self.option_avancer_cm_1.txb_gamma_m0.text),
-      "A": float(self.geo_def_1.txb_A.text),
-      "load": float(self.effort_normal_1.txb_load.text),
+      "A": float(self.geometrie_pou_1.txb_A.text),
+      "load": float(self.effort_normal_1.txb_N.text),
     }
     response = norme.api_call(API_URL, payload)
+
+    print(response)
+    print(response["nc_rd"])
+    print(response["verif"])
