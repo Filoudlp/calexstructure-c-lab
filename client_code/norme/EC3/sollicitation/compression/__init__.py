@@ -42,4 +42,39 @@ class compression(compressionTemplate):
     self.geometrie_pou_1.txb_Wz.visible = False
     self.geometrie_pou_1.lbl_Wz.visible = False
 
+    self.rslt_cm_1.lbl_els.visible = False
+    self.rslt_cm_1.lbl_els_percent.visible = False
+    self.rslt_cm_1.lbl_els_worst_verif.visible = False
+    self.rslt_cm_1.plt_els.visible = False
+
+    self.option_avancer_cm_1.lbl_alpha.visible = False
+    self.option_avancer_cm_1.lbl_beta.visible = False
+    self.option_avancer_cm_1.lbl_els_lim.visible = False
+    self.option_avancer_cm_1.lbl_alpha_rhs.visible = False
+    self.option_avancer_cm_1.lbl_alpha_chs.visible = False
+    self.option_avancer_cm_1.lbl_alpha_i_h.visible = False
+    self.option_avancer_cm_1.lbl_beta_rhs.visible = False
+    self.option_avancer_cm_1.lbl_beta_chs.visible = False
+    self.option_avancer_cm_1.lbl_beta_i_h.visible = False
+    self.option_avancer_cm_1.txb_beta_chs.visible = False
+    self.option_avancer_cm_1.txb_beta_rhs_shs.visible = False
+    self.option_avancer_cm_1.txb_beta_i_h.visible = False
+    self.option_avancer_cm_1.txb_alpha_chs.visible = False
+    self.option_avancer_cm_1.txb_alpha_rhs_shs.visible = False
+    self.option_avancer_cm_1.txb_alpha_i_h.visible = False
+    self.option_avancer_cm_1.txb_els_lim.visible = False
+
+    self.btn_optional_click()
+    self.layout.fun_show_sidesheet(False)
+
     # Any code you write here will run before the form opens.
+
+  @handle("btn_optional", "click")
+  def btn_optional_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.btn_optional.icon == "fa:arrow-down":
+      self.btn_optional.icon = "fa:arrow-right"
+      self.option_avancer_cm_1.visible = False
+    else:
+      self.btn_optional.icon = "fa:arrow-down"
+      self.option_avancer_cm_1.visible = True

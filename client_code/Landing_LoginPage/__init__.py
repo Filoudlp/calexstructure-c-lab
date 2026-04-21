@@ -27,7 +27,7 @@ class Landing_LoginPage(Landing_LoginPageTemplate):
     user = anvil.users.login_with_form(allow_cancel=True, show_signup_option=True,
                                        allow_remembered=True, remember_by_default=False)
     if user:
-      navigate(path="/poutre_cm")
+      navigate(path="/tools_list")
       #open_form('norme.EC3.Xlmt.Poutre_CM')
 
   # TODO check if this works in init, move if it does
