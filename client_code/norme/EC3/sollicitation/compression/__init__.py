@@ -9,6 +9,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from plotly import graph_objs as go
 
 from ..... import norme
 
@@ -96,7 +97,27 @@ class compression(compressionTemplate):
       "load": float(self.effort_normal_1.txb_N.text),
     }
     response = norme.api_call(API_URL, payload)
-
-    print(response)
+    
     print(response["nc_rd"])
     print(response["verif"])
+    formula = response["nc_rd"]["formula"]
+    formula_val = response["nc_rd"]["formula_values"]
+    ref = response["nc_rd"]["ref"]
+    nc_rd = response["nc_rd"]["result"]
+
+    self.rslt_cm_1.lbl_elu_percent = self.effort_normal_1.txb_N / nc_rd * 100
+
+    trace2 = go.Scatter(
+      x = x,
+      y = n,
+      name = 'normal force',
+      line = dict(
+        color = ('rgb(0, 255, 34)'),
+        width = 1)
+    )
+    self.plot_cm_1.plot_1.data = [trace0, trace1, trace2]
+
+    self.plot_cm_1.plot_1.layout = dict(title = 'Effort interne',
+                                        xaxis = dict(title = 'distance'),
+                                        yaxis = dict(title = 'Effort interne'),
+                                       )
