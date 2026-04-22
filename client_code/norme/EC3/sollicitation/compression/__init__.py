@@ -104,28 +104,40 @@ class compression(compressionTemplate):
     formula_val = response["nc_rd"]["formula_values"]
     ref = response["nc_rd"]["ref"]
     nc_rd = response["nc_rd"]["result"]
+    ned = float(self.effort_normal_1.txb_N.text)
 
-    self.rslt_cm_1.lbl_elu_percent = self.effort_normal_1.txb_N / nc_rd * 100
+    self.rslt_cm_1.lbl_elu_percent.text = ned / nc_rd * 100
 
-    trace2 = go.Scatter(
-      x = x,
-      y = n,
-      name = 'normal force',
-      line = dict(
-        color = ('rgb(0, 255, 34)'),
-        width = 1)
+    # Valeur à afficher
+    pourcentage = response["verif"]["result"] * 100
+    
+    # Couleur conditionnelle
+    couleur = 'green' if pourcentage < 100 else 'red'
+    
+    # Gérer le cas > 100% (on plafonne visuellement à 100)
+    valeur_affichee = min(pourcentage, 100)
+    reste = 100 - valeur_affichee
+    
+    fig = go.Figure(data=[go.Pie(
+      values=[valeur_affichee, reste],
+      labels=['Atteint', 'Restant'],
+      hole=0.6,
+      marker=dict(colors=[couleur, '#E8E8E8']),
+      textinfo='none',            # Pas de texte sur les parts
+      hoverinfo='skip',           # Pas de survol
+      sort=False,                 # Garde l'ordre
+      direction='clockwise',
+      rotation=0,
+      showlegend=False
+    )])
+    
+    fig.update_layout(
+      annotations=[dict(
+        text=f'<b>{pourcentage}%</b>',
+        x=0.5, y=0.5,
+        font=dict(size=40, color=couleur),
+        showarrow=False
+      )],
+      margin=dict(t=20, b=20, l=20, r=20)
     )
-
-    df = pd.DataFrame({
-      'Catégorie': ['A', 'B', 'C', 'D'],
-      'Valeur': [40, 30, 20, 10]
-    })
-
-    fig = px.pie(df, values='Valeur', names='Catégorie',
-             color_discrete_sequence=px.colors.sequential.RdBu)
-    self.plot_cm_1.plot_1.data = [trace0, trace1, trace2]
-
-    self.plot_cm_1.plot_1.layout = dict(title = 'Effort interne',
-                                        xaxis = dict(title = 'distance'),
-                                        yaxis = dict(title = 'Effort interne'),
-                                       )
+    self.plot_cm_1.plot_1.figure = fig
