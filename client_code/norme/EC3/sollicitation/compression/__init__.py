@@ -115,6 +115,14 @@ class compression(compressionTemplate):
         color = ('rgb(0, 255, 34)'),
         width = 1)
     )
+
+    df = pd.DataFrame({
+      'Catégorie': ['A', 'B', 'C', 'D'],
+      'Valeur': [40, 30, 20, 10]
+    })
+
+    fig = px.pie(df, values='Valeur', names='Catégorie',
+             color_discrete_sequence=px.colors.sequential.RdBu)
     self.plot_cm_1.plot_1.data = [trace0, trace1, trace2]
 
     self.plot_cm_1.plot_1.layout = dict(title = 'Effort interne',
