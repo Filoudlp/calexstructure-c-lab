@@ -40,7 +40,7 @@ class CompressionForm_copy(CompressionForm_copyTemplate):
     for title, color in cards_data:
       card = BlockCard(title=title, header_color=color)
       container.add_component(card)
-      get_dom_node(card).style.flex = "1"
+      #get_dom_node(card).style.flex = "1"
 
       # Ajoute du contenu dans chaque card
       card.add_input(RowItem(
