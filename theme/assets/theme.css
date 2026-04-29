@@ -229,3 +229,16 @@ Suppression du logo Anvil (optionnel)
 .anvil-branding {
   display: none !important;
 }
+
+/* Élargir la nav rail */
+.anvil-role-nav-rail,
+.nav-rail,
+nav.nav-rail {
+  width: 240px !important;
+  min-width: 240px !important;
+}
+
+/* Ajuster le contenu principal pour compenser */
+.nav-rail-content {
+  margin-left: 240px !important;
+}

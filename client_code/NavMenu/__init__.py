@@ -23,42 +23,47 @@ class NavMenu(NavMenuTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.check_upgrade_nav_link()
-    # Any code you write here will run before the form opens.
-    self.nvl_tool.item = {"1" : "test1", "bou": "test2"}
 
     self._sections = []
-
-    tool = SidebarSection(
-      title="Outil",
-      icon="fa:stars")
     
-    self._register_section(tool)
-    
+    # Section avec items
     ec2 = SidebarSection(
       title="Eurocode 2 - Concrete",
-      icon="fa:square",                            # 🧱 béton
+      icon="",
       items=[
-        ("Flexion",    self.open_flexion,    "fa:long-arrow-down"),
-        ("Shear",      self.open_shear,      "fa:scissors"),
-        ("Deflection", self.open_deflection, "fa:arrows-v"),
-        ("Cracking",   self.open_cracking,   "fa:bolt"),
+        ("Flexion", self.open_flexion, "fa:arrow-down"),
+        ("Shear",   self.open_shear,   "fa:cut"),
       ]
     )
     self._register_section(ec2)
-
+    
     ec3 = SidebarSection(
       title="Eurocode 3 - Steel",
-      icon="fa:cogs",                          # 🔧 acier
+      icon="",
       items=[
         ("Tension",     self.open_tension,     "fa:arrows-h"),
         ("Compression", self.open_compression, "fa:compress"),
-        ("Bending",     self.open_bending,     "fa:exchange"),
-        ("Buckling",    self.open_buckling,    "fa:random"),
       ]
     )
     self._register_section(ec3)
-
-    # Ferme toutes sauf la première
+    
+    # ✅ Lien simple — pas d'items, juste un on_click
+    tools = SidebarSection(
+      title="Tools",
+      icon="",
+      on_click=self.open_tools          # ← pas d'items=
+    )
+    self.add_component(tools)
+    # ⚠️ NE PAS l'ajouter à _sections (pour ne pas le collapse)
+    
+    settings = SidebarSection(
+      title="Settings",
+      icon="",
+      on_click=self.open_settings
+    )
+    self.add_component(settings)
+    
+    # Ferme les sections expandables sauf la première
     for s in self._sections[1:]:
       s.collapse()
 
@@ -66,24 +71,30 @@ class NavMenu(NavMenuTemplate):
     section.set_event_handler('x-section-opened', self._on_section_opened)
     self.column_panel_1.add_component(section)
     self._sections.append(section)
-  
-  def _on_section_opened(self, **event_args):
-    opened = event_args.get('sender')   # ← Anvil passe automatiquement le sender
+
+  def _on_section_opened(self, sender, **event_args):
     for s in self._sections:
-      if s is not opened:
+      if s is not sender:
         s.collapse()
 
-  # EC2
-  def open_flexion(self, **event_args):    print("Flexion")
-  def open_shear(self, **event_args):      print("Shear")
-  def open_deflection(self, **event_args): print("Deflection")
-  def open_cracking(self, **event_args):   print("Cracking")
-
-  # EC3
-  def open_tension(self, **event_args):     print("Tension")
+  # === Callbacks ===
+  def open_flexion(self, **event_args):  print("Flexion")
+  def open_shear(self, **event_args):    print("Shear")
+  def open_tension(self, **event_args):  print("Tension")
   def open_compression(self, **event_args): print("Compression")
-  def open_bending(self, **event_args):     print("Bending")
-  def open_buckling(self, **event_args):    print("Buckling")
+
+  def open_tools(self, **event_args):
+    # Ferme toutes les sections expandables pour la clarté
+    for s in self._sections:
+      s.collapse()
+    print("→ open_tools déclenché")
+    navigate(path="/tools_list")
+    print("perfect")
+
+  def open_settings(self, **event_args):
+    for s in self._sections:
+      s.collapse()
+    print("→ Page Settings")
   
   def check_upgrade_nav_link(self):
     self.user = anvil.users.get_user()
@@ -119,18 +130,3 @@ class NavMenu(NavMenuTemplate):
   def navigation_link_1_click(self, **event_args):
     """This method is called when the component is clicked"""
     navigate(path="/poutre_cm")
-
-    # ⚠️ Ces méthodes DOIVENT exister
-  def open_flexion(self, **event_args):
-    self.content_area.clear()
-    # self.content_area.add_component(FlexionForm())
-    print("Ouverture Flexion")
-
-  def open_shear(self, **event_args):
-    print("Ouverture Shear")
-
-  def open_deflection(self, **event_args):
-    print("Ouverture Deflection")
-
-  def open_cracking(self, **event_args):
-    print("Ouverture Cracking")

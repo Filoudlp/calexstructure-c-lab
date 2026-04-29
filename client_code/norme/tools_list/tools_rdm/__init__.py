@@ -10,6 +10,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from routing.router import navigate
 
 class tools_rdm(tools_rdmTemplate):
   def __init__(self, **properties):
@@ -43,4 +44,4 @@ class tools_rdm(tools_rdmTemplate):
   @handle("btn_deflection", "click")
   def btn_deflection_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('norme.general.Unit.deflection_POU')
+    navigate(path="/deflection")

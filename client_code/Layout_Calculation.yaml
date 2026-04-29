@@ -14,7 +14,8 @@ layout:
   data_bindings: []
   properties:
     content_padding: ['8', '8', '8', '8']
-    navigation_rail_collapse_to: bottom_app_bar
+    navigation_rail_collapse_to: modal_navigation_drawer
+    navigation_rail_vertical_align: top
     show_sidesheet: true
   type: form:dep_gqlhr7sei7ys7:Layouts.NavigationRailLayout
 slots:
