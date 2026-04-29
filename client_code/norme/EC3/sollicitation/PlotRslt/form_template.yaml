@@ -1,7 +1,7 @@
 components:
-- layout_properties: {grid_position: 'VYBEPW,EXGAAC'}
+- layout_properties: {grid_position: 'JXBQMU,EHXORE'}
   name: plt
-  properties: {}
+  properties: {height: '500'}
   type: Plot
 container: {type: ColumnPanel}
 is_package: true

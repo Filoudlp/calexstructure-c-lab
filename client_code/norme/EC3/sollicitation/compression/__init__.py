@@ -25,7 +25,7 @@ class compression(compressionTemplate):
     # ==========================================================
     self.card_data = BlockCard(
       title="Données — Compression",
-      header_color="#FFF2CC"  # jaune
+      header_color="input"  # jaune
     )
 
     # --- Inputs principaux (toujours visibles) ---
@@ -58,8 +58,9 @@ class compression(compressionTemplate):
     # ==========================================================
     self.card_results = BlockCard(
       title="Vérification compression — EC3 §6.2.4",
-      header_color="#DEEBF7"  # bleu
+      header_color="output"  # bleu
     )
+    self.card_results.toggle_icon_button_1.visible = False
     self.cp.add_component(self.card_results)
 
     # ==========================================================
@@ -100,25 +101,26 @@ class compression(compressionTemplate):
       row_type = "nok"
       
     row = RowItem(
-      name=response["nc_rd"]["name"],
-      value=nrd,
+      name=response['nc_rd']['name'],
+      value=f"{nrd:.2f}",
       unit="kN",
-      formula=f"{response['nc_rd']['formula']}\n{response['nc_rd']['formula_values']}",
+      formula=f"{response['nc_rd']['formula']} \n {response['nc_rd']['formula_values']}",
       ref=response["nc_rd"]["ref"],
       editable=False,
       row_type=row_type
     )
+    
     self.card_results.rslt_panel.add_component(row)
 
     if self.card_graph is None:
       self.card_graph = BlockCard(
         title="Graphique Résultat",
-        header_color="#DEEBF7"  # bleu
+        header_color="output"  # bleu
       )
+      self.card_graph.toggle_icon_button_1.visible = False
       self.content_panel.add_component(self.card_graph)
     else:
       self.card_graph.rslt_panel.clear()
 
     self.graph_rslt = PlotRslt(val=(ned / nrd))
-
     self.card_graph.rslt_panel.add_component(self.graph_rslt)

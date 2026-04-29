@@ -8,7 +8,7 @@ class PlotRslt(PlotRsltTemplate):
   def __init__(self, val, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    
     # Valeur à afficher
     pourcentage = val * 100
 
@@ -33,14 +33,15 @@ class PlotRslt(PlotRsltTemplate):
     )])
 
     fig.update_layout(
-      annotations=[dict(
-        text=f'<b>{pourcentage:.2f}%</b>',
-        x=0.5, y=0.5,
-        font=dict(size=40, color=couleur),
-        showarrow=False
-      )],
-      margin=dict(t=20, b=20, l=20, r=20)
+      annotations=[
+        dict(
+          text=f'<b>{pourcentage:.2f}%</b>',
+          x=0.5, y=0.2,
+          xref='paper', yref='paper',
+          font=dict(size=14, color=couleur),
+          showarrow=False
+        ),
+      ],
+      margin=dict(t=20, b=40, l=20, r=20),
     )
     self.plt.figure = fig
-
-    # Any code you write here will run before the form opens.

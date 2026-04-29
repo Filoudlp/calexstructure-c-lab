@@ -48,8 +48,9 @@ HEADER — Bandeau coloré (jaune par défaut)
 /* Variante bleue pour les blocs de résultats — 
 il faut ajouter le rôle "block-header-blue" */
 .anvil-role-block-header-blue {
-  /*background-color: #BDD7EE !important;*/
- /* border-bottom: 2px solid #7FAEDC;*/
+  background-color: #BDD7EE !important;
+  padding: 10px 14px !important;
+  border-bottom: 2px solid #7FAEDC;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
@@ -270,7 +271,7 @@ a.anvil-role-nav-link:active * {
 a.anvil-role-nav-link {
   display: flex !important;
   align-items: center !important;
-    width: 250px !important;                /* ← largeur = contenu */
+  width: 250px !important;                /* ← largeur = contenu */
   background-color: #2196F3 !important;
   border: 2px solid #1976D2 !important;
   border-radius: 24px !important;

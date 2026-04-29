@@ -12,13 +12,15 @@ from anvil.tables import app_tables
 
 
 class BlockCard(BlockCardTemplate):
-  def __init__(self, title="Bloc", header_color="#DEEBF7", **properties):
+  def __init__(self, title="Bloc", header_color="input", **properties):
     self.init_components(**properties)
 
     # Header
     self.lbl_title.text = title
-    
-    self.flow_panel_1.background = header_color
+    if header_color == "input":
+      self.flow_panel_1.role = "block-header"
+    elif header_color == "output":
+      self.flow_panel_1.role = "block-header-blue"
 
     self.params_panel.visible = False
 
@@ -49,9 +51,9 @@ class BlockCard(BlockCardTemplate):
     """Ajoute une ligne dans params_panel."""
     self.params_panel.add_component(row_component)
 
-    def add_result(self, row_component):
-      """Ajoute une ligne dans rslt_panel."""
-      self.rslt_panel.add_component(row_component)
+  def add_result(self, row_component):
+    """Ajoute une ligne dans rslt_panel."""
+    self.rslt_panel.add_component(row_component)
   
   def clear_results(self):
     """Vide rslt_panel avant un recalcul."""
