@@ -22,8 +22,7 @@ class NavMenu(NavMenuTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.check_upgrade_nav_link()
-    
+       
     self._sections = []
 
     # === Sections Eurocode (expandables) ===
@@ -55,13 +54,13 @@ class NavMenu(NavMenuTemplate):
     )
     self.column_panel_1.add_component(outils)
 
-    upgrade = SidebarSection(
+    self.upgrade = SidebarSection(
       title="Upgrade",
       icon="fa:arrow_upward",
       on_click=self.open_upgrade,
     )
-    self.column_panel_1.add_component(upgrade)
-
+    self.column_panel_1.add_component(self.upgrade)
+    
     compte = SidebarSection(
       title="Compte",
       icon="fa:person",
@@ -76,25 +75,11 @@ class NavMenu(NavMenuTemplate):
     )
     self.column_panel_1.add_component(logout)
 
-    # === Boutons bleus clairs (Tools + Settings) ===
-    tools = SidebarSection(
-      title="Tools",
-      icon="",
-      on_click=self.open_tools,
-    )
-    self.column_panel_1.add_component(tools)
-
-    settings = SidebarSection(
-      title="Settings",
-      icon="",
-      on_click=self.open_settings,
-      role="nav-light-button",
-    )
-    self.column_panel_1.add_component(settings)
-
     # Ferme les sections expandables sauf la première
     for s in self._sections[1:]:
       s.collapse()
+
+    self.check_upgrade_nav_link()
 
   # ------------------------------------------------------------------
   def _register_section(self, section):
@@ -116,7 +101,6 @@ class NavMenu(NavMenuTemplate):
   # === Callbacks liens plats ===
   def open_outils(self, **event_args):
     for s in self._sections: s.collapse()
-    print("→ Outils")
     navigate(path="/tools_list")
 
   def open_upgrade(self, **event_args):
@@ -125,12 +109,11 @@ class NavMenu(NavMenuTemplate):
 
   def open_compte(self, **event_args):
     for s in self._sections: s.collapse()
-    print("→ Compte")
+    navigate(path="/Account")
 
   def do_logout(self, **event_args):
     anvil.users.logout()
-    print("→ Déconnecté")
-    navigate(path="/login")
+    navigate(path="/")
 
   # === Callbacks boutons bleus ===
   def open_tools(self, **event_args):
@@ -141,37 +124,15 @@ class NavMenu(NavMenuTemplate):
     for s in self._sections: s.collapse()
     print("→ Settings")
   
-  def check_upgrade_nav_link(self):
-    self.user = anvil.users.get_user()
-    if self.user:
-      if self.user["subscription"] == "Free" or not self.user["subscription"]:
-        self.upgrade_navigation_link.visible = True
-      else:
-        self.upgrade_navigation_link.visible = False
-    else:
-      self.upgrade_navigation_link.visible = False
-
-  def logout_navigation_link_click(self, **event_args):
-    """This method is called when the component is clicked"""
-    anvil.users.logout()
-
   def stripe_pricing_link_click(self, **event_args):
     """This method is called when the component is clicked"""
     alert(StripePricing(), large=True)
     self.check_upgrade_nav_link()
 
-  @handle("nvl_tool", "click")
-  def nvl_tool_click(self, **event_args):
-    """This method is called when the component is clicked"""
-    navigate(path="/tools_list")
-
-  @handle("nvl_logout", "click")
-  def nvl_logout_click(self, **event_args):
-    """This method is called when the component is clicked"""
-    anvil.users.logout()
-    open_form('Landing_LoginPage')
-
-  @handle("navigation_link_1", "click")
-  def navigation_link_1_click(self, **event_args):
-    """This method is called when the component is clicked"""
-    navigate(path="/poutre_cm")
+  def check_upgrade_nav_link(self):
+    self.user = anvil.users.get_user()
+    if self.user:
+      if self.user["subscription"] == "Free" or not self.user["subscription"]:
+        self.upgrade.visible = True
+      else:
+        self.upgrade.visible = False

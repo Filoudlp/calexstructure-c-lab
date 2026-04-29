@@ -4,85 +4,10 @@ components_by_slot:
     name: heading_1
     properties: {text: Compression (EN 1993-1-1) - Without buckling}
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
-  - components:
-    - layout_properties: {grid_position: 'GLFXRU,BGWISM'}
-      name: rslt_cm_1
-      properties: {}
-      type: form:norme.EC3.Xlmt.Poutre_CM.Rslt_CM
-    layout_properties: {}
-    name: outlined_card_1
-    properties: {role: outlined-card}
-    type: ColumnPanel
   - layout_properties: {}
-    name: geometrie_pou_1
-    properties: {}
-    type: form:norme.EC3.geometrie_POU
-  - layout_properties: {}
-    name: materiaux_cm_1
-    properties: {}
-    type: form:norme.EC3.Xlmt.Poutre_CM.materiaux_CM
-  - layout_properties: {}
-    name: effort_normal_1
-    properties: {}
-    type: form:norme.effort_normal
-  - components:
-    - event_bindings: {}
-      layout_properties: {grid_position: 'BCJWWW,KZTNKB'}
-      name: btn_optional
-      properties: {align: left, icon: 'fa:arrow-down', role: outlined-button, text: Options avancés}
-      type: Button
-    - event_bindings: {}
-      layout_properties: {grid_position: 'BCJWWW,KDNIUJ'}
-      name: btn_calc
-      properties: {text: Calculer}
-      type: form:dep_gqlhr7sei7ys7:_Components.Button
-    - event_bindings: {}
-      layout_properties: {grid_position: 'BCJWWW,TRMYHS'}
-      name: btn_detailed
-      properties: {enabled: false, icon: 'fa:arrow-right', role: outlined-button, text: Résultat détaillé}
-      type: Button
-    - layout_properties: {grid_position: 'EIOSWC,DIAVWG'}
-      name: option_avancer_cm_1
-      properties: {}
-      type: form:norme.EC3.option_avancer_CM
-    layout_properties: {}
-    name: outlined_card_2
-    properties: {role: outlined-card}
-    type: ColumnPanel
-  sidesheet:
-  - event_bindings: {}
-    layout_properties: {}
-    name: btn_hide
-    properties: {icon: 'fa:arrow-right', role: outlined-button, text: Cacher résultat détaillé}
-    type: Button
-  - components:
-    - layout_properties: {grid_position: 'EPXRYW,JKQGEV'}
-      name: heading_2
-      properties: {scale: small, style: title, text: Résultats détaillés}
-      type: form:dep_gqlhr7sei7ys7:_Components.Heading
-    - layout_properties: {grid_position: 'MUUOUE,WKQXUP'}
-      name: lbl_formula
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'AHDBVZ,EXPVLF'}
-      name: lbl_formula_values
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'MZPMFK,GFBXJA'}
-      name: lbl_ref
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'OQAXNJ,ROBRMV'}
-      name: lbl_verif
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    - layout_properties: {grid_position: 'EUJSPX,GWWKDY'}
-      name: lbl_verif_ref
-      properties: {}
-      type: form:dep_gqlhr7sei7ys7:_Components.Text
-    layout_properties: {}
-    name: outlined_card_3
-    properties: {role: outlined-card}
-    type: ColumnPanel
+    name: content_panel
+    properties: {role: page-container}
+    type: FlowPanel
+  sidesheet: []
 is_package: true
-layout: {type: 'form:Layout_Calculation'}
+layout: {type: 'form:HomepageLayout'}

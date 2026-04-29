@@ -125,7 +125,7 @@ from collections import namedtuple
 # ---------------------------------------------------------------------
 # Définition de la structure Variable
 # ---------------------------------------------------------------------
-Variable = namedtuple("Variable", ["name", "unit", "description", "ref"])
+Variable = namedtuple("Variable", ["name", "unit", "formula", "ref"])
 
 # ---------------------------------------------------------------------
 # Registre central des variables

@@ -20,6 +20,7 @@ class Landing_LoginPage(Landing_LoginPageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+    
     # Any code you write here will run before the form opens.
 
   def login_button_click(self, **event_args):

@@ -1,7 +1,7 @@
 components:
 - components:
   - data_bindings: []
-    layout_properties: {}
+    layout_properties: {width: 71.9375}
     name: lbl_name
     properties: {role: ''}
     type: form:dep_gqlhr7sei7ys7:_Components.Text

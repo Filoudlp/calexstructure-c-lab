@@ -1,4 +1,4 @@
-from ._anvil_designer import CompressionFormTemplate
+from ._anvil_designer import CompressionForm_oldTemplate
 from anvil import *
 import anvil.server
 import anvil.designer
@@ -7,7 +7,7 @@ from ..BlockCard import BlockCard
 from ..RowItem import RowItem
 
 
-class CompressionForm(CompressionFormTemplate):
+class CompressionForm_old(CompressionForm_oldTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 

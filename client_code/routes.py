@@ -1,9 +1,16 @@
 # routes.py
 from routing.router import Route
 
-class IndexRoute(Route):
+#=========
+#= Admin =
+#=========
+class IndexRoute(Route): # OK
   path = "/"
-  form = "Landing_LoginPage"
+  form = "Landing_LoginPage" # Ok
+
+class AcountManagement(Route): # OK
+  path = "/Account"
+  form = "AccountManagement"
 #========
 #= Bois =
 #========

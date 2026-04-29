@@ -28,6 +28,15 @@ def user_has_subscription(allowed_subscriptions):
         return user["subscription"] and user["subscription"].lower() in [subscription.lower() for subscription in allowed_subscriptions]
     return verify_subscription
 
+@anvil.server.callable()
+def is_user_subscribed():
+  user = anvil.users.get_user()
+  if not user:
+    return False
+  status = user['subscription']
+  print("stat", status)
+  print('rslt', status in ('Abonnement C-Lab', 'trial'))
+  return status in ('Abonnement C-Lab', 'trial')
 
 @anvil.server.callable(require_user=True)
 def change_name(name):

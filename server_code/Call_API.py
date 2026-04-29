@@ -30,10 +30,10 @@ def api_call(api_url, payload_json=None):
       # La réponse est déjà un dictionnaire Python grâce à json=True
       return response
       
-      except anvil.http.HttpError as e:
-      # Gestion des erreurs HTTP (400, 500, etc.)
+    except anvil.http.HttpError as e:
+    # Gestion des erreurs HTTP (400, 500, etc.)
       return {"error": f"Erreur API ({e.status}): {e.content}"}
-      except Exception as e:
+    except Exception as e:
       return {"error": f"Erreur inattendue : {str(e)}"}
   else:
     try:

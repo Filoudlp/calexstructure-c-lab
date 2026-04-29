@@ -1,4 +1,4 @@
-from ._anvil_designer import AccountManagement_OKTemplate
+from ._anvil_designer import AccountManagementTemplate
 from anvil import *
 from routing import router
 import stripe.checkout
@@ -14,12 +14,20 @@ from .ChangeName import ChangeName
 from .ChangeEmail import ChangeEmail
 from .DeleteAccountAlert import DeleteAccountAlert
 
-class AccountManagement_OK(AccountManagement_OKTemplate):
+from routing.router import navigate
+
+class AccountManagement(AccountManagementTemplate):
   def __init__(self, **properties):
     self.user = anvil.users.get_user()
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    
+
+    val = anvil.server.call('is_user_subscribed')
+    if val:
+      txt = "Abonnement : C-Lab"
+    else:
+      txt = "Abonnement : Free"
+    self.lbl_abo.text = txt
     # Any code you write here will run before the form opens
 
   def change_name_link_click(self, **event_args):
@@ -42,16 +50,11 @@ class AccountManagement_OK(AccountManagement_OKTemplate):
       anvil.users.send_password_reset_email(self.user["email"])
       alert("A password reset email has been sent to your inbox.", title="Password reset email sent")
       anvil.users.logout()
-      open_form("LoginPage")
+      navigate(path="/")
 
   def delete_account_link_click(self, **event_args):
     """This method is called when the button is clicked"""
     if alert(DeleteAccountAlert(), buttons=None, large=True):
       anvil.server.call('delete_user')
       anvil.users.logout()
-      open_form('LoginPage')
-
-  @handle("manage_subscription_link", "click")
-  def manage_subscription_link_click(self, **event_args):
-    """This method is called clicked"""
-    pass
+      navigate(path="/")

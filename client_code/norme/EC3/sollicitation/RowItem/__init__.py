@@ -13,7 +13,7 @@ class RowItem(RowItemTemplate):
     if var:
       name    = var.name
       unit    = unit    or var.unit
-      formula = formula or var.formula
+      formula = formula or var.formula or ""
       ref     = ref     or var.ref
     else:
       name = kwargs.get("name", "")

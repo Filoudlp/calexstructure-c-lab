@@ -20,7 +20,5 @@ class ChangeName(ChangeNameTemplate):
 
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
-    Notification("This calls the change_name function in the Users server module.", title="Template Explanation", timeout=None, style="warning").show()
     self.raise_event("x-close-alert", value=self.name_text_box.text)
 
