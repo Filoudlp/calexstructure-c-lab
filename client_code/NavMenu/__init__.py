@@ -30,7 +30,10 @@ class NavMenu(NavMenuTemplate):
 
     tool = SidebarSection(
       title="Outil",
-      icon="fa:arrow")
+      icon="fa:stars")
+    
+    self._register_section(tool)
+    
     ec2 = SidebarSection(
       title="Eurocode 2 - Concrete",
       icon="fa:square",                            # 🧱 béton
