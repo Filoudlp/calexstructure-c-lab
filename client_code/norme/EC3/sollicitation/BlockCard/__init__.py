@@ -12,16 +12,12 @@ from anvil.tables import app_tables
 
 
 class BlockCard(BlockCardTemplate):
-  def __init__(self, title="Bloc", header_color="yellow", **properties):
+  def __init__(self, title="Bloc", header_color="#DEEBF7", **properties):
     self.init_components(**properties)
 
     # Header
     self.lbl_title.text = title
-    # Au lieu de header_color en hex, utilise des roles
-    #if header_color == "blue":
-    #  self.flow_panel_1.role = "block-header-blue"
-    #else:
-    #  self.flow_panel_1.role = "block-header"
+    
     self.flow_panel_1.background = header_color
 
     self.params_panel.visible = False

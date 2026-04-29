@@ -15,6 +15,9 @@ class compression(compressionTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 
+    self.card_graph = None
+    self.graph_rslt = None
+    
     component = []
 
     # ==========================================================
@@ -86,18 +89,19 @@ class compression(compressionTemplate):
     print(response)
     
     formula = response["nc_rd"]["formula"]
-    ned = norme.convert_unit(float(self.row_ned.tb_value.text), "kN", "N")
+    ned = float(self.row_ned.tb_value.text)
+    nrd = norme.convert_unit(response["nc_rd"]["result"], "N", "kN")
 
     self.card_results.rslt_panel.clear()
       
-    if (ned / response["nc_rd"]["result"])  <= 1.0:
+    if (ned / nrd)  <= 1.0:
       row_type = "ok"
     else:
       row_type = "nok"
       
     row = RowItem(
       name=response["nc_rd"]["name"],
-      value=norme.convert_unit(response["nc_rd"]["result"], "N", "kN"),
+      value=nrd,
       unit="kN",
       formula=f"{response['nc_rd']['formula']}\n{response['nc_rd']['formula_values']}",
       ref=response["nc_rd"]["ref"],
@@ -106,8 +110,15 @@ class compression(compressionTemplate):
     )
     self.card_results.rslt_panel.add_component(row)
 
-    self.graph_rslt = PltRslt(
-      title="Graphique",
-      header_color="#DEEBF7"  # bleu
-    )
-    self.cp.add_component(self.card_results)
+    if self.card_graph is None:
+      self.card_graph = BlockCard(
+        title="Graphique Résultat",
+        header_color="#DEEBF7"  # bleu
+      )
+      self.content_panel.add_component(self.card_graph)
+    else:
+      self.card_graph.rslt_panel.clear()
+
+    self.graph_rslt = PlotRslt(val=(ned / nrd))
+
+    self.card_graph.rslt_panel.add_component(self.graph_rslt)
