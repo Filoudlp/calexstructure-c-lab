@@ -23,10 +23,10 @@ class NavMenu(NavMenuTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.check_upgrade_nav_link()
-
-    self._sections = []
     
-    # Section avec items
+    self._sections = []
+
+    # === Sections Eurocode (expandables) ===
     ec2 = SidebarSection(
       title="Eurocode 2 - Concrete",
       icon="",
@@ -36,7 +36,7 @@ class NavMenu(NavMenuTemplate):
       ]
     )
     self._register_section(ec2)
-    
+
     ec3 = SidebarSection(
       title="Eurocode 3 - Steel",
       icon="",
@@ -46,27 +46,57 @@ class NavMenu(NavMenuTemplate):
       ]
     )
     self._register_section(ec3)
-    
-    # ✅ Lien simple — pas d'items, juste un on_click
+
+    # === Liens simples (style "plat" gris) ===
+    outils = SidebarSection(
+      title="Outils",
+      icon="fa:stars",
+      on_click=self.open_outils,
+    )
+    self.column_panel_1.add_component(outils)
+
+    upgrade = SidebarSection(
+      title="Upgrade",
+      icon="fa:arrow_upward",
+      on_click=self.open_upgrade,
+    )
+    self.column_panel_1.add_component(upgrade)
+
+    compte = SidebarSection(
+      title="Compte",
+      icon="fa:person",
+      on_click=self.open_compte,
+    )
+    self.column_panel_1.add_component(compte)
+
+    logout = SidebarSection(
+      title="Log out",
+      icon="fa:logout",
+      on_click=self.do_logout,
+    )
+    self.column_panel_1.add_component(logout)
+
+    # === Boutons bleus clairs (Tools + Settings) ===
     tools = SidebarSection(
       title="Tools",
       icon="",
-      on_click=self.open_tools          # ← pas d'items=
+      on_click=self.open_tools,
     )
-    self.add_component(tools)
-    # ⚠️ NE PAS l'ajouter à _sections (pour ne pas le collapse)
-    
+    self.column_panel_1.add_component(tools)
+
     settings = SidebarSection(
       title="Settings",
       icon="",
-      on_click=self.open_settings
+      on_click=self.open_settings,
+      role="nav-light-button",
     )
-    self.add_component(settings)
-    
+    self.column_panel_1.add_component(settings)
+
     # Ferme les sections expandables sauf la première
     for s in self._sections[1:]:
       s.collapse()
 
+  # ------------------------------------------------------------------
   def _register_section(self, section):
     section.set_event_handler('x-section-opened', self._on_section_opened)
     self.column_panel_1.add_component(section)
@@ -77,24 +107,39 @@ class NavMenu(NavMenuTemplate):
       if s is not sender:
         s.collapse()
 
-  # === Callbacks ===
-  def open_flexion(self, **event_args):  print("Flexion")
-  def open_shear(self, **event_args):    print("Shear")
-  def open_tension(self, **event_args):  print("Tension")
+  # === Callbacks Eurocode ===
+  def open_flexion(self, **event_args):     print("Flexion")
+  def open_shear(self, **event_args):       print("Shear")
+  def open_tension(self, **event_args):     print("Tension")
   def open_compression(self, **event_args): print("Compression")
 
-  def open_tools(self, **event_args):
-    # Ferme toutes les sections expandables pour la clarté
-    for s in self._sections:
-      s.collapse()
-    print("→ open_tools déclenché")
+  # === Callbacks liens plats ===
+  def open_outils(self, **event_args):
+    for s in self._sections: s.collapse()
+    print("→ Outils")
     navigate(path="/tools_list")
-    print("perfect")
+
+  def open_upgrade(self, **event_args):
+    for s in self._sections: s.collapse()
+    self.stripe_pricing_link_click()
+
+  def open_compte(self, **event_args):
+    for s in self._sections: s.collapse()
+    print("→ Compte")
+
+  def do_logout(self, **event_args):
+    anvil.users.logout()
+    print("→ Déconnecté")
+    navigate(path="/login")
+
+  # === Callbacks boutons bleus ===
+  def open_tools(self, **event_args):
+    for s in self._sections: s.collapse()
+    navigate(path="/tools_list")
 
   def open_settings(self, **event_args):
-    for s in self._sections:
-      s.collapse()
-    print("→ Page Settings")
+    for s in self._sections: s.collapse()
+    print("→ Settings")
   
   def check_upgrade_nav_link(self):
     self.user = anvil.users.get_user()

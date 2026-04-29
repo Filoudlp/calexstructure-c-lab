@@ -373,3 +373,7 @@ roles:
 - {name: section-item}
 - {name: ' items-panel'}
 - {name: content-area}
+- {name: nav-link}
+- {name: nav-section-header}
+- {name: nav-subitem}
+- {name: nav-subitem-selected}

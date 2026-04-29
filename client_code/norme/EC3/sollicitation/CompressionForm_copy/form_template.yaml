@@ -10,4 +10,4 @@ components_by_slot:
     type: FlowPanel
   sidesheet: []
 is_package: true
-layout: {type: 'form:Layout_Calculation'}
+layout: {type: 'form:HomepageLayout'}

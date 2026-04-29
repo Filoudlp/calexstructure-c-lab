@@ -1,14 +1,8 @@
 from routing import router
-import stripe.checkout
 import anvil.server
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
 from anvil import *
 import json
+
 
 # This is a package.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
@@ -111,4 +105,74 @@ def convert_unit(val: float, base: str, end: str):
 
     # Si on arrive ici, c'est que les unités sont incompatibles ou inconnues
   raise ValueError(f"Conversion impossible entre '{base}' et '{end}'.")
-  
+
+#==========
+#= Var CM =
+#==========
+from collections import namedtuple
+
+Variable = namedtuple('Variable', ['name', 'unit', 'formula', 'ref', 'default'])
+#class Variable:
+ # name: str
+#  unit: str
+ # formula: str = ""
+  #ref: str = ""
+ # default: float = 0.0
+
+# Catalogue global
+from collections import namedtuple
+
+# ---------------------------------------------------------------------
+# Définition de la structure Variable
+# ---------------------------------------------------------------------
+Variable = namedtuple("Variable", ["name", "unit", "description", "ref"])
+
+# ---------------------------------------------------------------------
+# Registre central des variables
+# ---------------------------------------------------------------------
+_INPUT_REGISTRY = {
+  v.name: v for v in [
+    # --- Sollicitations ---
+    Variable("Ned", "kN",   "Effort normal de calcul",      "EC3 §6.2.4"),
+    Variable("Med", "kN.m", "Moment fléchissant de calcul", "EC3 §6.2.5"),
+    Variable("Ved", "kN",   "Effort tranchant de calcul",   "EC3 §6.2.6"),
+
+    # --- Matériau ---
+    Variable("fy",  "MPa",  "Limite élastique",             "EC3 §3.2"),
+    Variable("fu",  "MPa",  "Résistance ultime",            "EC3 §3.2"),
+
+    # --- Section ---
+    Variable("A",     "mm²", "Aire de la section",          "—"),
+    Variable("Anet",  "mm²", "Aire nette de la section",    "—"),
+
+    # --- Coefficients partiels ---
+    Variable("gamma_m0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),
+    Variable("gamma_m1", "-", "Coefficient partiel γM1",    "EC3 §6.1"),
+    Variable("gamma_m2", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
+  ]
+}
+
+
+def get_rowitem_input(name: str):
+  """
+    Retourne la définition d'une variable d'entrée à partir de son nom.
+
+    :param name: Nom de la variable (ex. "Ned", "fy", "A").
+    :return:     Objet Variable correspondant.
+    :raises TypeError: si name n'est pas une str.
+    :raises KeyError:  si la variable n'est pas répertoriée.
+    """
+  if not isinstance(name, str):
+    raise TypeError(f"Le nom de la variable doit être une str, reçu {type(name).__name__}.")
+
+  key = name.strip()
+  var = _INPUT_REGISTRY.get(key)
+
+  if var is None:
+    # Recherche insensible à la casse en secours
+    for k, v in _INPUT_REGISTRY.items():
+      if k.lower() == key.lower():
+        return v
+    raise KeyError(f"Variable inconnue : '{name}'. "
+                   f"Variables disponibles : {list(_INPUT_REGISTRY.keys())}")
+  return var

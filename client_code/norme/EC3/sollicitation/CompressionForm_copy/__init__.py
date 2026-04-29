@@ -28,13 +28,8 @@ class CompressionForm_copy(CompressionForm_copyTemplate):
     )
 
     # --- Inputs principaux (toujours visibles) ---
-    self.row_ned = RowItem(
-      name="Ned", value=500, unit="kN",
-      formula="Effort de compression",
-      ref="EC3 §6.2.4",
-      editable=True, row_type="input"
-    )
-    self.card_data.inputs_panel.add_component(self.row_ned)
+    self.card_data.inputs_panel.add_component(RowItem("Ned", value=500, editable=True))
+    self.card_data.inputs_panel.add_component(RowItem("A", value=10, editable=True))
 
     # --- Params avancés (cachés par défaut) ---
     self.row_fy = RowItem(

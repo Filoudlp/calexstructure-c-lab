@@ -1,22 +1,24 @@
 from ._anvil_designer import RowItemTemplate
 from anvil import *
 
-
+from ..... import norme
 class RowItem(RowItemTemplate):
-  def __init__(self, name="", value="", unit="", formula="",
-               ref="", editable=False, row_type="input", **properties):
-    self.init_components(**properties)
-    
+  def __init__(self, var=None, value=None, formula=None, ref=None, 
+               unit=None, editable=False, row_type="input", **kwargs):
+    self.init_components(**kwargs)
+
+    # Mode 1 : depuis le catalogue VARS
+    if isinstance(var, str):
+      var = norme.get_rowitem_input(var)
+    if var:
+      name    = var.name
+      unit    = unit    or var.unit
+      formula = formula or var.formula
+      ref     = ref     or var.ref
+    else:
+      name = kwargs.get("name", "")
+
     self.lbl_name.text = name
-  #  role_map = {
-  #    "input": "row-item",
-  #    "param": "row-param",
-  #    "result": "row-item",
- #     "ok": "row-ok",
-  #    "nok": "row-nok",
-  #  }
-  #  self.role = role_map.get(row_type, "row-item")
-    
     self.lbl_unit.text = unit
     self.lbl_formula.text = formula
     self.lbl_ref.text = ref
