@@ -1,27 +1,13 @@
 components:
-- components:
-  - event_bindings: {}
-    layout_properties: {slot: anvil-m3-buttonMenu-slot}
-    name: navigation_link_1
-    properties: {text: Poutre CM}
-    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
-  - layout_properties: {slot: anvil-m3-buttonMenu-slot}
-    name: navigation_link_2
-    properties: {text: Poutre BA}
-    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
-  - layout_properties: {slot: anvil-m3-buttonMenu-slot}
-    name: navigation_link_3
-    properties: {}
-    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
-  layout_properties: {full_width_row: false, grid_position: 'TZXSYE,YMCMZW'}
-  name: button_menu_1
-  properties: {align: center, appearance: outlined, bold: false, button_font_size: null, enabled: true, icon: 'mi:star', icon_position: left, icon_size: 18, menu_border: '', text: Projet, underline: false}
-  type: form:dep_gqlhr7sei7ys7:_Components.ButtonMenu
+- layout_properties: {full_width_row: true, grid_position: 'CFHPBL,IIOYMZ'}
+  name: column_panel_1
+  properties: {role: nav-menu}
+  type: ColumnPanel
 - data_bindings: []
   event_bindings: {}
   layout_properties: {grid_position: 'ORITRP,ZNHABP'}
   name: nvl_tool
-  properties: {selected: false, text: Outils}
+  properties: {icon: 'mi:start', selected: false, text: Outils}
   type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
 - event_bindings: {click: stripe_pricing_link_click}
   layout_properties: {grid_position: 'EUXKFQ,UCFEFA'}
@@ -37,6 +23,8 @@ components:
   name: nvl_logout
   properties: {icon: 'mi:logout', text: Log out}
   type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
-container: {type: ColumnPanel}
+container:
+  properties: {role: content-area}
+  type: ColumnPanel
 custom_component: true
 is_package: true

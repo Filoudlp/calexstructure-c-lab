@@ -366,3 +366,10 @@ roles:
 - {name: row-input}
 - {name: block-card}
 - {name: page-container}
+- {name: sidebar-link}
+- {name: nav-menu}
+- {name: sidebar-section}
+- {name: ' section-header'}
+- {name: section-item}
+- {name: ' items-panel'}
+- {name: content-area}
