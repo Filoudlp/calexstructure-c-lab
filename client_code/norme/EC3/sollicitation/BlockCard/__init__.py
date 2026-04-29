@@ -18,10 +18,11 @@ class BlockCard(BlockCardTemplate):
     # Header
     self.lbl_title.text = title
     # Au lieu de header_color en hex, utilise des roles
-    if header_color == "blue":
-      self.flow_panel_1.role = "block-header-blue"
-    else:
-      self.flow_panel_1.role = "block-header"
+    #if header_color == "blue":
+    #  self.flow_panel_1.role = "block-header-blue"
+    #else:
+    #  self.flow_panel_1.role = "block-header"
+    self.flow_panel_1.background = header_color
 
     self.params_panel.visible = False
 
@@ -39,6 +40,8 @@ class BlockCard(BlockCardTemplate):
 
   def toggle_params(self, **event_args):
     self.params_panel.visible = not self.params_panel.visible
+    self.toggle_icon_button_1.icon = "mi:arrow_circle_up" \
+    if self.toggle_icon_button_1.selected else "mi:arrow_circle_down"
 
 # ----- API publique pour ajouter des lignes -----
 
@@ -59,3 +62,5 @@ class BlockCard(BlockCardTemplate):
     self.rslt_panel.clear()
 
     # Any code you write here will run before the form opens.
+    
+    
