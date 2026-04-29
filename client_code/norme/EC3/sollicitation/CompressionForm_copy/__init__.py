@@ -32,7 +32,7 @@ class CompressionForm_copy(CompressionForm_copyTemplate):
     # ============== 4 BlockCards ==============
     cards_data = [
       ("Compression",     "#FFF2CC"),
-      ("Traction",        "#DEEBF7"),
+      ("Traction",        "blue"),
       ("Flexion",         "#E2EFDA"),
       ("Cisaillement",    "#FCE4D6"),
     ]
