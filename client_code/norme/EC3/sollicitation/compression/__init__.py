@@ -99,7 +99,7 @@ class compression(compressionTemplate):
     self.cp2.add_component(self.card_select)
 
     self.on_change_select_type()
-    #self.on_change_select_sec()
+    self.on_change_select_sec()
 
     # ==========================================================
     # BOUTON CALCULER
@@ -125,6 +125,7 @@ class compression(compressionTemplate):
     # CALCUL
     # ==============================================================
   def on_change_select_type(self, **event_args):
+    print(42)
     API_URL = "/section_steel"
     payload = {
       "sec": self.row_select_type.value,   
@@ -132,6 +133,8 @@ class compression(compressionTemplate):
     response = norme.api_call(API_URL, payload)
 
     self.row_select.update(response['liste'])
+
+    self.on_change_select_sec()
     
   
   def on_change_select_sec(self, **event_args):

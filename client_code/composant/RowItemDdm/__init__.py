@@ -16,6 +16,7 @@ class RowItemDdm(RowItemDdmTemplate):
 
     self.lbl_name.text = name
 
+    self.ddm_section.set_event_handler("change", on_change)
     if var is not None:
       self.update(var)
 
