@@ -5,6 +5,7 @@ import anvil.server
 
 from ..BlockCard import BlockCard
 from ..RowItem import RowItem
+from ..RowItemSec import RowItemSec
 from ..PlotRslt import PlotRslt
 
 from ..... import norme
@@ -63,6 +64,22 @@ class compression(compressionTemplate):
     self.card_results.toggle_icon_button_1.visible = False
     self.cp.add_component(self.card_results)
 
+    self.card_select = BlockCard(
+      title="Selection de section",
+      header_color="input"  # bleu
+    )
+
+    API_URL = "/section_steel"
+    response = norme.api_call(API_URL)
+
+    self.row_select = RowItemSec(
+      component = response["liste"],
+      on_change=self.on_change_select      
+    )
+
+    self.card_select.add_component(self.row_select)
+    self.car
+
     # ==========================================================
     # BOUTON CALCULER
     # ==========================================================
@@ -78,6 +95,9 @@ class compression(compressionTemplate):
     # ==============================================================
     # CALCUL
     # ==============================================================
+  def on_change_select(self, **event_args):
+    print(42)
+
   def calculer(self, **event_args):
     API_URL = "/api/cm_compression_calc"
     payload = {

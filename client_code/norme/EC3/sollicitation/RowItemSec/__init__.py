@@ -27,7 +27,12 @@ class RowItemSec(RowItemSecTemplate):
       self.item_list.append(row)
     self.ddm_section.items = self.item_list
     self.ddm_section.selected_value = self.ddm_section.items[0]
-    self.ddm_section.set_event_handler('click', on_change)
+    self.ddm_section.set_event_handler('change', on_change)
   #  self.ddm_section_change()
 
-  def update
+  def update(self, var):
+    self.item_list = []
+    for row in var:
+      self.item_list.append(row)
+    self.ddm_section.items = self.item_list
+    self.ddm_section.selected_value = self.ddm_section.items[0]
