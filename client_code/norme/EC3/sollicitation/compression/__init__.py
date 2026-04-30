@@ -71,6 +71,7 @@ class compression(compressionTemplate):
 
     API_URL = "/section_steel_type"
     response = norme.api_call(API_URL)
+    print(response)
 
     self.row_select_type = RowItemDdm(
       name = "Type de section",
