@@ -1,27 +1,21 @@
-from ._anvil_designer import RowItemSecTemplate
+from ._anvil_designer import RowItemDdmTemplate
 from anvil import *
 import anvil.server
-from routing import router
-import stripe.checkout
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
 
 from ..... import norme
 
 
-class RowItemSec(RowItemSecTemplate):
+class RowItemDdm(RowItemDdmTemplate):
   def __init__(
     self,
+    name,
     var,
     on_change,
     **kwargs,
   ):
     self.init_components(**kwargs)
 
+    self.lbl_name.text = name
     self.item_list = []
     for row in var:
       self.item_list.append(row)

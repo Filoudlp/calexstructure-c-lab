@@ -42,6 +42,3 @@ class RowItem(RowItemTemplate):
       "nok": "#FFC7CE",
     }
     self.background = colors.get(row_type, "#FFFFFF")
-
-    # Event sur changement
-    self.tb_value.set_event_handler('change', self._on_change)

@@ -5,7 +5,8 @@ import anvil.server
 
 from ..BlockCard import BlockCard
 from ..RowItem import RowItem
-from ..RowItemSec import RowItemSec
+from ..RowItemDdm import RowItemDdm
+from ..RowItemChbx import RowItemChbx
 from ..PlotRslt import PlotRslt
 
 from ..... import norme
@@ -72,13 +73,24 @@ class compression(compressionTemplate):
     API_URL = "/section_steel"
     response = norme.api_call(API_URL)
 
-    self.row_select = RowItemSec(
-      component = response["liste"],
+    self.row_select = RowItemDdm(
+      name = "Section",
+      var = response["liste"],
       on_change=self.on_change_select      
     )
 
+    self.row_checked = RowItemChbx(
+      name_lbl = "",
+      name_chbx = "Utiliser profilé pour les calculs",
+      on_checked=self.on_checked   
+    )
+    param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
+    for val in param:
+      row = RowItem()
+      self.card_data.params_panel.add_component(row)
     self.card_select.add_component(self.row_select)
-    self.car
+    self.card_select.add_component(self.row_checked)
+    self.cp.add_component(self.card_select)
 
     # ==========================================================
     # BOUTON CALCULER
@@ -97,6 +109,9 @@ class compression(compressionTemplate):
     # ==============================================================
   def on_change_select(self, **event_args):
     print(42)
+
+  def on_checked(self, **event_args):
+    print(65)
 
   def calculer(self, **event_args):
     API_URL = "/api/cm_compression_calc"
