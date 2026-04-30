@@ -3,11 +3,11 @@ from anvil import *
 import stripe.checkout
 import anvil.server
 
-from ..BlockCard import BlockCard
-from ..RowItem import RowItem
-from ..RowItemDdm import RowItemDdm
-from ..RowItemChbx import RowItemChbx
-from ..PlotRslt import PlotRslt
+from .....composant.BlockCard import BlockCard
+from .....composant.RowItem import RowItem
+from .....composant.RowItemDdm import RowItemDdm
+from .....composant.RowItemChbx import RowItemChbx
+from .....composant.RowPlot import RowPlot
 
 from ..... import norme
 from plotly import graph_objs as go
@@ -69,13 +69,18 @@ class compression(compressionTemplate):
       header_color="input"  # bleu
     )
 
-    API_URL = "/section_steel"
+    API_URL = "/section_steel_type"
     response = norme.api_call(API_URL)
 
+    self.row_select_type = RowItemDdm(
+      name = "Type de section",
+      var = response['liste'],
+      on_change=self.on_change_select_type  
+    )
+    
     self.row_select = RowItemDdm(
       name = "Section",
-      var = response["liste"],
-      on_change=self.on_change_select      
+      on_change=self.on_change_select_sec      
     )
 
     self.row_checked = RowItemChbx(
@@ -83,9 +88,14 @@ class compression(compressionTemplate):
       name_chbx = "Utiliser profilé pour les calculs",
       on_checked=self.on_checked   
     )
+    self.card_select.add_input(self.row_select_type)
     self.card_select.add_input(self.row_select)
     self.card_select.add_input(self.row_checked)
-    self.content_panel.add_component(self.card_select)
+
+    self.cp2 = ColumnPanel()
+    self.content_panel.add_component(self.cp2)
+    
+    self.cp2.add_component(self.card_select)
 
     self.on_change_select()
 
@@ -96,15 +106,33 @@ class compression(compressionTemplate):
       text="Calculer",
       background="#1F4E79",
       foreground="#FFFFFF",
-      role="primary-color"
+      role="primary-color",
+      bold=True,                    # Texte en gras → visuellement plus imposant
+      font_size=16,                 # Taille de la police
+      icon="fa:calculator",         # Optionnel : icône
+      spacing_above="medium",
+      spacing_below="medium",
     )
+    
+    # Appliquer un style inline via tag pour forcer la taille
+    self.btn_calc.tag.style = "min-width: 200px; padding: 12px 24px; font-size: 16px;"
     self.btn_calc.set_event_handler('click', self.calculer)
     self.cp.add_component(self.btn_calc)
 
     # ==============================================================
     # CALCUL
     # ==============================================================
-  def on_change_select(self, **event_args):
+  def on_change_select_type(self, **event_args):
+    API_URL = "/section_steel"
+    payload = {
+      "sec": self.row_select_type.value,   
+    }   
+    response = norme.api_call(API_URL, payload)
+
+    self.row_select.update(response['liste'])
+    
+  
+  def on_change_select_sec(self, **event_args):
     self.card_select.clear_param()
     API_URL = "/section_steel_val"
     payload = {
@@ -171,9 +199,9 @@ class compression(compressionTemplate):
         header_color="output"  # bleu
       )
       self.card_graph.toggle_icon_button_1.visible = False
-      self.content_panel.add_component(self.card_graph)
+      self.cp2.add_component(self.card_graph)
     else:
       self.card_graph.clear_results()
 
-    self.graph_rslt = PlotRslt(val=(ned / nrd))
+    self.graph_rslt = RowPlot(val=(ned / nrd))
     self.card_graph.add_result(self.graph_rslt)

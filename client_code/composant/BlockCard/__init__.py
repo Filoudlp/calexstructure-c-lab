@@ -1,8 +1,5 @@
 from ._anvil_designer import BlockCardTemplate
 from anvil import *
-# import anvil.server
-
-
 
 class BlockCard(BlockCardTemplate):
   def __init__(self, title="Bloc", header_color="input", **properties):

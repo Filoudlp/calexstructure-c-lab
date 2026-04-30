@@ -1,10 +1,9 @@
-from ._anvil_designer import PlotRsltTemplate
+from ._anvil_designer import RowPlotTemplate
 from anvil import *
 
 from plotly import graph_objs as go
 
-
-class PlotRslt(PlotRsltTemplate):
+class RowPlot(RowPlotTemplate):
   def __init__(self, val, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -36,7 +35,7 @@ class PlotRslt(PlotRsltTemplate):
       annotations=[
         dict(
           text=f'<b>{pourcentage:.2f}%</b>',
-          x=0.5, y=0.0,
+          x=0.5, y=-0.10,
           xref='paper', yref='paper',
           font=dict(size=14, color=couleur),
           showarrow=False

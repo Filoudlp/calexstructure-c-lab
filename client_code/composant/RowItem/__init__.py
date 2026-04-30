@@ -1,7 +1,8 @@
 from ._anvil_designer import RowItemTemplate
 from anvil import *
 
-from ..... import norme
+from ... import norme
+
 class RowItem(RowItemTemplate):
   def __init__(self, var=None, value=None, formula=None, ref=None, 
                unit=None, editable=False, row_type="input", **kwargs):

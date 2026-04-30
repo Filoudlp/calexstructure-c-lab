@@ -1,8 +1,7 @@
 from ._anvil_designer import RowItemChbxTemplate
 from anvil import *
-import anvil.server
 
-from ..... import norme
+from ... import norme
 
 
 class RowItemChbx(RowItemChbxTemplate):
