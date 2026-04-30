@@ -30,3 +30,7 @@ class RowItemDdm(RowItemDdmTemplate):
       self.item_list.append(row)
     self.ddm_section.items = self.item_list
     self.ddm_section.selected_value = self.ddm_section.items[0]
+
+  @property
+  def value(self):
+    return self.ddm_section.selected_value

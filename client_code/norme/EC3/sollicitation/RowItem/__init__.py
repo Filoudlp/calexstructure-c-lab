@@ -23,6 +23,8 @@ class RowItem(RowItemTemplate):
     self.lbl_formula.text = formula
     self.lbl_ref.text = ref
 
+    self.editable = editable
+
     if editable:
       self.tb_value.text = str(value)
       self.tb_value.visible = True
@@ -42,3 +44,25 @@ class RowItem(RowItemTemplate):
       "nok": "#FFC7CE",
     }
     self.background = colors.get(row_type, "#FFFFFF")
+
+  @property
+  def tb_value_enabled(self):
+    return self.tb_value.enabled
+
+  @tb_value_enabled.setter
+  def tb_value_enabled(self, val):
+    self.tb_value.enabled = val
+
+  @property
+  def value(self):
+    if self.editable:
+      return self.tb_value.text
+    else:
+      return self.lbl_value.text
+
+  @value.setter
+  def value(self, val):
+    if self.editable:
+      self.tb_value.text = val
+    else:
+      self.lbl_value.text = val

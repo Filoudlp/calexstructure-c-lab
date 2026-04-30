@@ -18,3 +18,7 @@ class RowItemChbx(RowItemChbxTemplate):
     self.lbl_name.text = name_lbl
     self.chbx.text = name_chbx
     self.chbx.set_event_handler("change", on_checked)
+
+  @property
+  def checked(self):
+    return self.chbx.checked

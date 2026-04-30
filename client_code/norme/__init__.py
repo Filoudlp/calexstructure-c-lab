@@ -3,6 +3,7 @@ import anvil.server
 from anvil import *
 import json
 
+from collections import namedtuple
 
 # This is a package.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
@@ -109,18 +110,6 @@ def convert_unit(val: float, base: str, end: str):
 #==========
 #= Var CM =
 #==========
-from collections import namedtuple
-
-Variable = namedtuple('Variable', ['name', 'unit', 'formula', 'ref', 'default'])
-#class Variable:
- # name: str
-#  unit: str
- # formula: str = ""
-  #ref: str = ""
- # default: float = 0.0
-
-# Catalogue global
-from collections import namedtuple
 
 # ---------------------------------------------------------------------
 # Définition de la structure Variable
@@ -142,8 +131,16 @@ _INPUT_REGISTRY = {
     Variable("fu",  "MPa",  "Résistance ultime",            "EC3 §3.2"),
 
     # --- Section ---
+    Variable("b",     "mm", "Base de la section",          "—"),
+    Variable("h",     "mm", "Hauteur de la section",          "—"),
+    Variable("e",     "mm", "Epaisseur de la section",          "—"),
     Variable("A",     "mm²", "Aire de la section",          "—"),
     Variable("Anet",  "mm²", "Aire nette de la section",    "—"),
+    Variable("Av",     "mm²", "Aire de cisaillement de la section",          "—"),
+    Variable("Iy",     "mm4", "Inertie axe Y de la section",          "—"),
+    Variable("Iz",     "mm4", "Inertie axe Z de la section",          "—"),
+    Variable("Wy",     "mm3", "Module élastique axe Z de la section",          "—"),
+    Variable("Wz",     "mm3", "Module élastique axe Z de la section",          "—"),
 
     # --- Coefficients partiels ---
     Variable("gamma_m0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),

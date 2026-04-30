@@ -34,9 +34,9 @@ class compression(compressionTemplate):
     self.row_ned = RowItem("Ned", value=500, editable=True)
     self.row_fy = RowItem("fy", value=235, editable=True)
     self.row_A = RowItem("A", value=10, editable=True)
-    self.card_data.inputs_panel.add_component(self.row_ned)
-    self.card_data.inputs_panel.add_component(self.row_A)
-    self.card_data.inputs_panel.add_component(self.row_fy)
+    self.card_data.add_input(self.row_ned)
+    self.card_data.add_input(self.row_A)
+    self.card_data.add_input(self.row_fy)
 
     # --- Params avancés (cachés par défaut) ---
     self.row_gm0 = RowItem(
@@ -49,7 +49,7 @@ class compression(compressionTemplate):
     component.append(self.row_gm0)
 
     for row in component:
-      self.card_data.params_panel.add_component(row)
+      self.card_data.add_param(row)
 
     self.cp = ColumnPanel()
     self.content_panel.add_component(self.cp)
@@ -62,7 +62,6 @@ class compression(compressionTemplate):
       title="Vérification compression — EC3 §6.2.4",
       header_color="output"  # bleu
     )
-    self.card_results.toggle_icon_button_1.visible = False
     self.cp.add_component(self.card_results)
 
     self.card_select = BlockCard(
@@ -84,13 +83,11 @@ class compression(compressionTemplate):
       name_chbx = "Utiliser profilé pour les calculs",
       on_checked=self.on_checked   
     )
-    param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
-    for val in param:
-      row = RowItem()
-      self.card_data.params_panel.add_component(row)
-    self.card_select.add_component(self.row_select)
-    self.card_select.add_component(self.row_checked)
-    self.cp.add_component(self.card_select)
+    self.card_select.add_input(self.row_select)
+    self.card_select.add_input(self.row_checked)
+    self.content_panel.add_component(self.card_select)
+
+    self.on_change_select()
 
     # ==========================================================
     # BOUTON CALCULER
@@ -108,10 +105,32 @@ class compression(compressionTemplate):
     # CALCUL
     # ==============================================================
   def on_change_select(self, **event_args):
-    print(42)
+    self.card_select.clear_param()
+    API_URL = "/section_steel_val"
+    payload = {
+      "section": self.row_select.value,   
+    }
+    response = norme.api_call(API_URL, payload)#anvil.server.call('api_call', API_URL, payload)
+
+    param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
+    for val in param:
+      if val == "A":
+        self.row_sec_A = RowItem(val, value=response["section_properties"][val], editable=False, row_type="param")
+        row = self.row_sec_A
+      else:
+        row = RowItem(val, value=response["section_properties"][val], editable=False, row_type="param")
+      self.card_select.add_param(row)
+      
+    self.on_checked()
 
   def on_checked(self, **event_args):
-    print(65)
+    
+    if self.row_checked.checked:
+        self.row_A.tb_value_enabled = False
+        self.row_A.value = self.row_sec_A.value
+      
+    else:
+        self.row_A.tb_value_enabled = True
 
   def calculer(self, **event_args):
     API_URL = "/api/cm_compression_calc"
@@ -122,13 +141,12 @@ class compression(compressionTemplate):
       "load": norme.convert_unit(float(self.row_ned.tb_value.text), "kN", "N"),
     }
     response = norme.api_call(API_URL, payload)
-    print(response)
-    
+
     formula = response["nc_rd"]["formula"]
     ned = float(self.row_ned.tb_value.text)
     nrd = norme.convert_unit(response["nc_rd"]["result"], "N", "kN")
 
-    self.card_results.rslt_panel.clear()
+    self.card_results.clear_results()
       
     if (ned / nrd)  <= 1.0:
       row_type = "ok"
@@ -145,7 +163,7 @@ class compression(compressionTemplate):
       row_type=row_type
     )
     
-    self.card_results.rslt_panel.add_component(row)
+    self.card_results.add_result(row)
 
     if self.card_graph is None:
       self.card_graph = BlockCard(
@@ -155,7 +173,7 @@ class compression(compressionTemplate):
       self.card_graph.toggle_icon_button_1.visible = False
       self.content_panel.add_component(self.card_graph)
     else:
-      self.card_graph.rslt_panel.clear()
+      self.card_graph.clear_results()
 
     self.graph_rslt = PlotRslt(val=(ned / nrd))
-    self.card_graph.rslt_panel.add_component(self.graph_rslt)
+    self.card_graph.add_result(self.graph_rslt)

@@ -45,6 +45,10 @@ class BlockCard(BlockCardTemplate):
     """Ajoute une ligne dans params_panel."""
     self.params_panel.add_component(row_component)
 
+  def clear_param(self):
+    """Vide rslt_panel avant un recalcul."""
+    self.params_panel.clear()
+
   def add_result(self, row_component):
     """Ajoute une ligne dans rslt_panel."""
     self.rslt_panel.add_component(row_component)
