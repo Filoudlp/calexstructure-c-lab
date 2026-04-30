@@ -115,10 +115,10 @@ class compression(compressionTemplate):
     param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
     for val in param:
       if val == "A":
-        self.row_sec_A = RowItem(val, value=response["section_properties"][val], editable=False, row_type="param")
+        self.row_sec_A = RowItem(val, value=f"{response['section_properties'][val]:.2f}", editable=False, row_type="param")
         row = self.row_sec_A
       else:
-        row = RowItem(val, value=response["section_properties"][val], editable=False, row_type="param")
+        row = RowItem(val, value=f"{response['section_properties'][val]:.2f}", editable=False, row_type="param")
       self.card_select.add_param(row)
       
     self.on_checked()

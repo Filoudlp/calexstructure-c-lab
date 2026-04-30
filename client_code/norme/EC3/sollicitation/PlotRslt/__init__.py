@@ -36,7 +36,7 @@ class PlotRslt(PlotRsltTemplate):
       annotations=[
         dict(
           text=f'<b>{pourcentage:.2f}%</b>',
-          x=0.5, y=0.2,
+          x=0.5, y=0.0,
           xref='paper', yref='paper',
           font=dict(size=14, color=couleur),
           showarrow=False

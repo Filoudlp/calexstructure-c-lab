@@ -1,7 +1,12 @@
 components:
-- layout_properties: {grid_position: 'JXBQMU,EHXORE'}
-  name: plt
-  properties: {height: '500'}
-  type: Plot
+- components:
+  - layout_properties: {width: 534.9999941235352}
+    name: plt
+    properties: {height: '300'}
+    type: Plot
+  layout_properties: {grid_position: 'FONSBG,TJYQCX'}
+  name: flow_panel_1
+  properties: {vertical_align: middle}
+  type: FlowPanel
 container: {type: ColumnPanel}
 is_package: true
