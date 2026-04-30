@@ -98,7 +98,8 @@ class compression(compressionTemplate):
     
     self.cp2.add_component(self.card_select)
 
-    self.on_change_select()
+    self.on_change_select_type()
+    #self.on_change_select_sec()
 
     # ==========================================================
     # BOUTON CALCULER
@@ -140,7 +141,7 @@ class compression(compressionTemplate):
       "section": self.row_select.value,   
     }
     response = norme.api_call(API_URL, payload)#anvil.server.call('api_call', API_URL, payload)
-
+    print(response)
     param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
     for val in param:
       if val == "A":
