@@ -85,6 +85,10 @@ components_by_slot:
     name: lbl_abo
     properties: {text: 'Abonnement :'}
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
+  - layout_properties: {}
+    name: btn_upgrade
+    properties: {role: outlined-button, text: Upgrade}
+    type: Button
   content_slot: []
 is_package: true
 layout:

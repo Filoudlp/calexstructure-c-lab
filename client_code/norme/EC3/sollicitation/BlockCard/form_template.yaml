@@ -35,5 +35,5 @@ components:
 container:
   properties: {role: block-card}
   type: ColumnPanel
-custom_component: true
+custom_component: false
 is_package: true

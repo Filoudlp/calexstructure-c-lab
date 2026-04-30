@@ -1,14 +1,7 @@
 from ._anvil_designer import BlockCardTemplate
 from anvil import *
-import anvil.server
-from routing import router
-import stripe.checkout
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
+# import anvil.server
+
 
 
 class BlockCard(BlockCardTemplate):
@@ -21,6 +14,7 @@ class BlockCard(BlockCardTemplate):
       self.flow_panel_1.role = "block-header"
     elif header_color == "output":
       self.flow_panel_1.role = "block-header-blue"
+      self.toggle_icon_button_1.visible = False
 
     self.params_panel.visible = False
 

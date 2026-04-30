@@ -6,9 +6,7 @@ import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
 import anvil.server
 import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
+from ..StripePricing import StripePricing
 
 from .ChangeName import ChangeName
 from .ChangeEmail import ChangeEmail
@@ -25,8 +23,10 @@ class AccountManagement(AccountManagementTemplate):
     val = anvil.server.call('is_user_subscribed')
     if val:
       txt = "Abonnement : C-Lab"
+      self.btn_upgrade.visible = False
     else:
       txt = "Abonnement : Free"
+      self.btn_upgrade.visible = True
     self.lbl_abo.text = txt
     # Any code you write here will run before the form opens
 
@@ -58,3 +58,8 @@ class AccountManagement(AccountManagementTemplate):
       anvil.server.call('delete_user')
       anvil.users.logout()
       navigate(path="/")
+
+  @handle("btn_upgrade", "click")
+  def btn_upgrade_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert(StripePricing(), large=True)
