@@ -44,13 +44,15 @@ class RowItem(RowItemTemplate):
     self.background = colors.get(row_type, "#FFFFFF")
 
     # Event sur changement
-  #  self.tb_value.set_event_handler('change', self._on_change)
+    self.tb_value.set_event_handler('change', self._on_change)
 
   def _on_change(self, **event_args):
+    print("change")
     self.raise_event('x-value-changed')
 
   @property
   def value(self):
+    print("value")
     if self.tb_value.visible:
       try:
         return float(self.tb_value.text)
