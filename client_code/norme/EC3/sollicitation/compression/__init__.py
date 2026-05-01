@@ -125,27 +125,27 @@ class compression(compressionTemplate):
     # CALCUL
     # ==============================================================
   def on_change_select_type(self, **event_args):
-    print(42)
     API_URL = "/section_steel"
     payload = {
       "sec": self.row_select_type.value,   
     }   
     response = norme.api_call(API_URL, payload)
+    print(response)
 
     self.row_select.update(response['liste'])
-
     self.on_change_select_sec()
-    
   
   def on_change_select_sec(self, **event_args):
     self.card_select.clear_param()
     API_URL = "/section_steel_val"
     payload = {
+      "type": self.row_select_type.value,
       "section": self.row_select.value,   
     }
+    print(self.row_select_type.value)
     response = norme.api_call(API_URL, payload)
-    print(response)
     param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
+    print(response)
     for val in param:
       if val == "A":
         self.row_sec_A = RowItem(val, value=f"{response['section_properties'][val]:.2f}", editable=False, row_type="param")
