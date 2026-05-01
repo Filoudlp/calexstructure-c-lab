@@ -143,7 +143,7 @@ class compression(compressionTemplate):
     payload = {
       "section": self.row_select.value,   
     }
-    response = norme.api_call(API_URL, payload)#anvil.server.call('api_call', API_URL, payload)
+    response = norme.api_call(API_URL, payload)
     print(response)
     param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
     for val in param:
