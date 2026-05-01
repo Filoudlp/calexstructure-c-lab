@@ -71,7 +71,6 @@ class compression(compressionTemplate):
 
     API_URL = "/section_steel_type"
     response = norme.api_call(API_URL)
-    print(response)
 
     self.row_select_type = RowItemDdm(
       name = "Type de section",
@@ -129,8 +128,8 @@ class compression(compressionTemplate):
     payload = {
       "sec": self.row_select_type.value,   
     }   
+
     response = norme.api_call(API_URL, payload)
-    print(response)
 
     self.row_select.update(response['liste'])
     self.on_change_select_sec()
@@ -142,16 +141,19 @@ class compression(compressionTemplate):
       "type": self.row_select_type.value,
       "section": self.row_select.value,   
     }
-    print(self.row_select_type.value)
     response = norme.api_call(API_URL, payload)
     param = ["b", "h", "e", "A", "Av", "Iy", "Iz", "Wy", "Wz"]
-    print(response)
     for val in param:
+      if response['section_properties'][val] is None:
+        value = None
+      else:
+        value = f"{response['section_properties'][val]:.2f}"
+        
       if val == "A":
-        self.row_sec_A = RowItem(val, value=f"{response['section_properties'][val]:.2f}", editable=False, row_type="param")
+        self.row_sec_A = RowItem(val, value=value, editable=False, row_type="param")
         row = self.row_sec_A
       else:
-        row = RowItem(val, value=f"{response['section_properties'][val]:.2f}", editable=False, row_type="param")
+        row = RowItem(val, value=value, editable=False, row_type="param")
       self.card_select.add_param(row)
       
     self.on_checked()

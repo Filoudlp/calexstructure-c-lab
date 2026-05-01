@@ -19,6 +19,9 @@ class RowItem(RowItemTemplate):
     else:
       name = kwargs.get("name", "")
 
+    if isinstance(value, float):
+      value = round(value, 2)
+
     self.lbl_name.text = name
     self.lbl_unit.text = unit
     self.lbl_formula.text = formula
