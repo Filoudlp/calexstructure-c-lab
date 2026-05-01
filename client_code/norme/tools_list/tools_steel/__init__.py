@@ -56,3 +56,9 @@ class tools_steel(tools_steelTemplate):
   def btn_shear_click(self, **event_args):
     """This method is called when the button is clicked"""
     navigate(path="/cm_shear")
+
+  @handle("btn_bending", "click")
+  def btn_bending_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    navigate(path="/cm_bending")
+

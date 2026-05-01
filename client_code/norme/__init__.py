@@ -139,7 +139,7 @@ _INPUT_REGISTRY = {
     Variable("Av",     "mm²", "Aire de cisaillement de la section",          "—"),
     Variable("Iy",     "mm4", "Inertie axe Y de la section",          "—"),
     Variable("Iz",     "mm4", "Inertie axe Z de la section",          "—"),
-    Variable("Wy",     "mm3", "Module élastique axe Z de la section",          "—"),
+    Variable("Wy",     "mm3", "Module élastique axe Y de la section",          "—"),
     Variable("Wz",     "mm3", "Module élastique axe Z de la section",          "—"),
 
     # --- Coefficients partiels ---

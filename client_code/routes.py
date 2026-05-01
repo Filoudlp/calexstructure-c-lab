@@ -26,13 +26,17 @@ class PouCMRoute(Route):
   path = "/poutre_cm"
   form = 'norme.EC3.Xlmt.Poutre_CM'
 
-class CMCompressionRoute(Route):
+class CMCompressionRoute(Route): # OK
   path = "/cm_compression"
   form = 'norme.EC3.sollicitation.compression'
 
 class CMShearRoute(Route):
   path = "/cm_shear"
   form = 'norme.EC3.sollicitation.shear'
+
+class CMBendingRoute(Route):
+  path = "/cm_bending"
+  form = 'norme.EC3.sollicitation.bending'
 
 #=======
 #= RDM =

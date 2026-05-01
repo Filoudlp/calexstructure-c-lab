@@ -25,6 +25,11 @@ components:
       name: btn_shear
       properties: {role: outlined-button, text: Effort tranchant}
       type: Button
+    - event_bindings: {}
+      layout_properties: {grid_position: 'FWGRPK,CBMXTR'}
+      name: btn_bending
+      properties: {role: outlined-button, text: Flexion}
+      type: Button
     layout_properties: {grid_position: 'HLSKGP,SKYTSV'}
     name: otld_soliciation
     properties: {col_widths: '{}', role: null}
