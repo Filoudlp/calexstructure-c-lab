@@ -104,8 +104,14 @@ class bending_ba(bending_baTemplate):
       row_type = "param"
     )
 
-    self.chk_bx = RowItemChbx(
-      name_lbl = "d = O.9"
+    self.chk_bx_d = RowItemChbx(
+      name_chbx = "d = O.9 h",
+      on_checked = self.chk_bx_d
+    )
+    
+    self.chk_bx_dp = RowItemChbx(
+      name_chbx = "d' = O.1 h",
+      on_checked = self.chk_bx_dp
     )
 
     component.append(self.row_gc)
@@ -126,3 +132,7 @@ class bending_ba(bending_baTemplate):
     self.cp = ColumnPanel()
     self.content_panel.add_component(self.cp)
     self.cp.add_component(self.card_data)
+
+  def chk_bx_d(self):
+    if self.chk_bx_d.checked:
+      
