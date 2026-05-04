@@ -15,9 +15,6 @@ class bending_cm(bending_cmTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 
-    self.card_graph = None
-    self.graph_rslt = None
-
     component = []
 
     # ==========================================================
