@@ -1,15 +1,7 @@
 from ._anvil_designer import tools_concreteTemplate
 from anvil import *
-from routing import router
-import stripe.checkout
-import anvil.server
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
 
+from routing.router import navigate
 
 class tools_concrete(tools_concreteTemplate):
   def __init__(self, **properties):
@@ -39,3 +31,8 @@ class tools_concrete(tools_concreteTemplate):
         self.tgicbtn_lmt.icon = "mi:arrow_circle_right"
         self.tgicbtn_lmt.selected = False
         self.otld_lmt.visible = False
+
+  @handle("btn_bending", "click")
+  def btn_bending_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    navigate(path="/deflection")

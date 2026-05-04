@@ -40,14 +40,20 @@ class Form2(Form2Template):
     self.card_data.add_input(self.row_med)
 
     # --- Params avancés (cachés par défaut) ---
-    self.row_gm0 = RowItem(
+    self.row_gc = RowItem(
       name="γc",
-      value=1.0,
       editable=True,
-      row_type="param",
+      row_type = "param"
     )
 
-    component.append(self.row_gm0)
+    self.row_gs = RowItem(
+      name="γs",
+      editable=True,
+      row_type = "param"
+    )
+
+    component.append(self.row_gc)
+    component.append(self.row_gs)
 
     for row in component:
       self.card_data.add_param(row)

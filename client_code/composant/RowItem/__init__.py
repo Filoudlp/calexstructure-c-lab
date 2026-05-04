@@ -11,16 +11,18 @@ class RowItem(RowItemTemplate):
     # Mode 1 : depuis le catalogue VARS
     if isinstance(var, str):
       var = norme.get_rowitem_input(var)
+    if isinstance(value, float):
+      value = round(value, 2)
     if var:
       name    = var.name
+      value   = value   or var.value
       unit    = unit    or var.unit
       formula = formula or var.formula or ""
       ref     = ref     or var.ref
     else:
       name = kwargs.get("name", "")
 
-    if isinstance(value, float):
-      value = round(value, 2)
+    
 
     self.lbl_name.text = name
     self.lbl_unit.text = unit

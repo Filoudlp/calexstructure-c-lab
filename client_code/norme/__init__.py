@@ -127,27 +127,28 @@ _INPUT_REGISTRY = {
     Variable("Ved", "10", "kN",   "Effort tranchant de calcul",   "EC3 §6.2.6"),
 
     # --- Matériau ---
-    Variable("fy",  "MPa",  "Limite élastique",             "EC3 §3.2"),
-    Variable("fu",  "MPa",  "Résistance ultime",            "EC3 §3.2"),
+    Variable("fy", "235", "MPa",  "Limite élastique",             "EC3 §3.2"),
+    Variable("fu",  "235", "MPa",  "Résistance ultime",            "EC3 §3.2"),
 
     # --- Section ---
-    Variable("b",     "mm", "Base de la section",          "—"),
-    Variable("h",     "mm", "Hauteur de la section",          "—"),
-    Variable("e",     "mm", "Epaisseur de la section",          "—"),
-    Variable("A",     "mm²", "Aire de la section",          "—"),
-    Variable("Anet",  "mm²", "Aire nette de la section",    "—"),
-    Variable("Av",     "mm²", "Aire de cisaillement de la section",          "—"),
-    Variable("Iy",     "mm4", "Inertie axe Y de la section",          "—"),
-    Variable("Iz",     "mm4", "Inertie axe Z de la section",          "—"),
-    Variable("Wy",     "mm3", "Module élastique axe Y de la section",          "—"),
-    Variable("Wz",     "mm3", "Module élastique axe Z de la section",          "—"),
+    Variable("b",  "200",   "mm", "Base de la section",          "—"),
+    Variable("h", "500",    "mm", "Hauteur de la section",          "—"),
+    Variable("e",  "10",   "mm", "Epaisseur de la section",          "—"),
+    Variable("A",   "1000",  "mm²", "Aire de la section",          "—"),
+    Variable("Anet", "1000", "mm²", "Aire nette de la section",    "—"),
+    Variable("Av",  "1000",   "mm²", "Aire de cisaillement de la section",          "—"),
+    Variable("Iy",  "10000",   "mm4", "Inertie axe Y de la section",          "—"),
+    Variable("Iz",  "10000",   "mm4", "Inertie axe Z de la section",          "—"),
+    Variable("Wy",  "10000",   "mm3", "Module élastique axe Y de la section",          "—"),
+    Variable("Wz",  "10000",   "mm3", "Module élastique axe Z de la section",          "—"),
 
     # --- Coefficients partiels ---
-    Variable("γm0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),
-    Variable("γm1", "-", "Coefficient partiel γM1",    "EC3 §6.1"),
-    Variable("γm2", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
+    Variable("γm0", "1.0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),
+    Variable("γm1", "1.0", "-", "Coefficient partiel γM1",    "EC3 §6.1"),
+    Variable("γm2", "1.0", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
 
-    Variable("γc", "-", "Coefficient partiel γc",    "EC2 §2.4.2.4"),
+    Variable("γc", "1.5", "-", "Coefficient partiel γc",    "EC2 §2.4.2.4"),
+    Variable("γc", "1.15", "-", "Coefficient partiel γs",    "EC2 §2.4.2.4"),
   ]
 }
 
