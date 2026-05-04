@@ -204,4 +204,17 @@ class bending_ba(bending_baTemplate):
     )
 
     self.card_results.add_result(row)
+
+    if self.card_graph is None:
+      self.card_graph = BlockCard(
+        title="Graphique Résultat",
+        header_color="output",  # bleu
+        show_toggle = False
+      )
+      self.cp2.add_component(self.card_graph)
+    else:
+      self.card_graph.clear_results()
+
+    self.graph_rslt = RowPlot(val=(ned / nrd))
+    self.card_graph.add_result(self.graph_rslt)
       
