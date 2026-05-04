@@ -114,7 +114,7 @@ def convert_unit(val: float, base: str, end: str):
 # ---------------------------------------------------------------------
 # Définition de la structure Variable
 # ---------------------------------------------------------------------
-Variable = namedtuple("Variable", ["name", "unit", "formula", "ref"])
+Variable = namedtuple("Variable", ["name", "value", "unit", "formula", "ref"])
 
 # ---------------------------------------------------------------------
 # Registre central des variables
@@ -122,9 +122,9 @@ Variable = namedtuple("Variable", ["name", "unit", "formula", "ref"])
 _INPUT_REGISTRY = {
   v.name: v for v in [
     # --- Sollicitations ---
-    Variable("Ned", "kN",   "Effort normal de calcul",      "EC3 §6.2.4"),
-    Variable("Med", "kN.m", "Moment fléchissant de calcul", "EC3 §6.2.5"),
-    Variable("Ved", "kN",   "Effort tranchant de calcul",   "EC3 §6.2.6"),
+    Variable("Ned", "10", "kN",   "Effort normal de calcul",      "EC3 §6.2.4"),
+    Variable("Med", "10", "kN.m", "Moment fléchissant de calcul", "EC3 §6.2.5"),
+    Variable("Ved", "10", "kN",   "Effort tranchant de calcul",   "EC3 §6.2.6"),
 
     # --- Matériau ---
     Variable("fy",  "MPa",  "Limite élastique",             "EC3 §3.2"),
@@ -143,9 +143,11 @@ _INPUT_REGISTRY = {
     Variable("Wz",     "mm3", "Module élastique axe Z de la section",          "—"),
 
     # --- Coefficients partiels ---
-    Variable("gamma_m0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),
-    Variable("gamma_m1", "-", "Coefficient partiel γM1",    "EC3 §6.1"),
-    Variable("gamma_m2", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
+    Variable("γm0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),
+    Variable("γm1", "-", "Coefficient partiel γM1",    "EC3 §6.1"),
+    Variable("γm2", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
+
+    Variable("γc", "-", "Coefficient partiel γc",    "EC2 §2.4.2.4"),
   ]
 }
 

@@ -43,9 +43,6 @@ class Form2(Form2Template):
     self.row_gm0 = RowItem(
       name="γc",
       value=1.0,
-      unit="-",
-      formula="Coefficient partiel",
-      ref="EC3 §6.1",
       editable=True,
       row_type="param",
     )
