@@ -58,7 +58,8 @@ class compression_cm(compression_cmTemplate):
     # ==========================================================
     self.card_results = BlockCard(
       title="Vérification compression — EC3 §6.2.4",
-      header_color="output"  # bleu
+      header_color="output",  # bleu
+      show_toggle=False
     )
     self.cp.add_component(self.card_results)
 

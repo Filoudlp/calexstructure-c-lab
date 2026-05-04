@@ -2,7 +2,7 @@ from ._anvil_designer import BlockCardTemplate
 from anvil import *
 
 class BlockCard(BlockCardTemplate):
-  def __init__(self, title="Bloc", header_color="input", **properties):
+  def __init__(self, title="Bloc", header_color="input", show_toggle=True, **properties):
     self.init_components(**properties)
 
     # Header
@@ -11,6 +11,10 @@ class BlockCard(BlockCardTemplate):
       self.flow_panel_1.role = "block-header"
     elif header_color == "output":
       self.flow_panel_1.role = "block-header-blue"
+
+    if show_toggle:
+      self.toggle_icon_button_1.visible = True
+    else : 
       self.toggle_icon_button_1.visible = False
 
     self.params_panel.visible = False

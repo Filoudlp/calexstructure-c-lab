@@ -61,6 +61,7 @@ class bending_cm(bending_cmTemplate):
     self.card_results = BlockCard(
       title="Vérification Flexion — EC3 §6.2.5",
       header_color="output",  # bleu
+      show_toggle=False,
     )
     self.cp.add_component(self.card_results)
 

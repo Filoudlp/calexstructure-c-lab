@@ -53,8 +53,8 @@ class bending_ba(bending_baTemplate):
     self.card_data.add_input(self.row_med)
     self.card_data.add_input(self.gp1)
 
-    self.gp1.add_component(self.chk_bx_d, row="A", col_xs=0, width_xs=3)
-    self.gp1.add_component(self.chk_bx_dp, row="A", col_xs=3, width_xs=3)
+    self.gp1.add_component(self.chk_bx_d, row="A", col_xs=0, width_xs=6)
+    self.gp1.add_component(self.chk_bx_dp, row="A", col_xs=6, width_xs=6)
 
     # --- Params avancés (cachés par défaut) ---
     self.row_gc = RowItem(
@@ -140,6 +140,38 @@ class bending_ba(bending_baTemplate):
     self.content_panel.add_component(self.cp)
     self.cp.add_component(self.card_data)
 
+
+    # ==========================================================
+    # BLOC 2 : RÉSULTATS
+    # ==========================================================
+    self.card_results = BlockCard(
+      title="Vérification Flexion",
+      header_color="output",  # bleu
+      show_toggle=True
+    )
+
+    self.cp.add_component(self.card_results)
+
+    # ==========================================================
+    # BOUTON CALCULER
+    # ==========================================================
+    self.btn_calc = Button(
+      text="Calculer",
+      background="#1F4E79",
+      foreground="#FFFFFF",
+      role="primary-color",
+      bold=True,                    # Texte en gras → visuellement plus imposant
+      font_size=16,                 # Taille de la police
+      icon="fa:calculator",         # Optionnel : icône
+      spacing_above="medium",
+      spacing_below="medium",
+    )
+
+    # Appliquer un style inline via tag pour forcer la taille
+    self.btn_calc.tag.style = "min-width: 200px; padding: 12px 24px; font-size: 16px;"
+    self.btn_calc.set_event_handler('click', self.calculer)
+    self.cp.add_component(self.btn_calc)
+
   def chk_bx_d(self):
     if self.chk_bx_d.checked:
       self.chk_bx_d.chkbx_value = "d = O.9 h"
@@ -152,4 +184,17 @@ class bending_ba(bending_baTemplate):
     else :
       self.chk_bx_dp.chkbx_value = "d' ≠ O.1 h"
 
+  def calculer(self):
+    self.row_t = RowItem(
+      "η",
+      editable=True,
+      row_type = "param"
+    )
+
+    self.row_t = RowItem(
+      "η",
+      val=
+      editable=True,
+      row_type = "ok"
+    )
       

@@ -6,7 +6,9 @@ components_by_slot:
     properties: {}
     type: form:NavMenu
 is_package: true
-layout: {type: 'form:dep_gqlhr7sei7ys7:Layouts.NavigationDrawerLayout'}
+layout:
+  properties: {show_sidesheet: false}
+  type: form:dep_gqlhr7sei7ys7:Layouts.NavigationDrawerLayout
 slots:
   content:
     index: 0
