@@ -17,8 +17,6 @@ class BlockCard(BlockCardTemplate):
     else : 
       self.toggle_icon_button_1.visible = False
 
-    self.params_panel.visible = False
-
     # Params cachés par défaut
     self.params_panel.visible = False
 

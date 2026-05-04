@@ -172,29 +172,36 @@ class bending_ba(bending_baTemplate):
     self.btn_calc.set_event_handler('click', self.calculer)
     self.cp.add_component(self.btn_calc)
 
-  def chk_bx_d(self):
+  def chk_bx_d(self, **event_args):
     if self.chk_bx_d.checked:
-      self.chk_bx_d.chkbx_value = "d = O.9 h"
+      self.chk_bx_d.chkbx_value = "d = 0.9 h"
     else :
       self.chk_bx_d.chkbx_value = "d ≠ O.9 h"
 
-  def chk_bx_dp(self):
+  def chk_bx_dp(self, **event_args):
     if self.chk_bx_dp.checked:
-      self.chk_bx_dp.chkbx_value = "d' = O.1 h"
+      self.chk_bx_dp.chkbx_value = "d' = 0.1 h"
     else :
-      self.chk_bx_dp.chkbx_value = "d' ≠ O.1 h"
+      self.chk_bx_dp.chkbx_value = "d' ≠ 0.1 h"
 
-  def calculer(self):
+  def calculer(self, **event_args):
     self.row_t = RowItem(
       "η",
-      editable=True,
+      editable=False,
       row_type = "param"
     )
 
-    self.row_t = RowItem(
-      "η",
-      val=
-      editable=True,
-      row_type = "ok"
+    self.card_results.add_param(self.row_t)
+
+    row = RowItem(
+      name="test",
+      value="v",
+      unit="kN",
+      formula="fdgh",
+      ref="response",
+      editable=False,
+      row_type="ok"
     )
+
+    self.card_results.add_result(row)
       
