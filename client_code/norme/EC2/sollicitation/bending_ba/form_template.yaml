@@ -4,5 +4,9 @@ components_by_slot:
     name: heading_1
     properties: {text: Flexion (EN 1992-1-1)}
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
+  - layout_properties: {}
+    name: content_panel
+    properties: {}
+    type: FlowPanel
 is_package: true
 layout: {type: 'form:HomepageLayout'}

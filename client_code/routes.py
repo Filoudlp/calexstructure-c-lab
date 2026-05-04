@@ -28,7 +28,7 @@ class CMShearRoute(Route):
 
 class BABendingRoute(Route):
   path = "/ba_bending"
-  form = 'norme.EC3.sollicitation.bending_ba'
+  form = 'norme.EC2.sollicitation.bending_ba'
 
 #======
 #= CM =

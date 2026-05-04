@@ -35,4 +35,4 @@ class tools_concrete(tools_concreteTemplate):
   @handle("btn_bending", "click")
   def btn_bending_click(self, **event_args):
     """This method is called when the button is clicked"""
-    navigate(path="/deflection")
+    navigate(path="/ba_bending")

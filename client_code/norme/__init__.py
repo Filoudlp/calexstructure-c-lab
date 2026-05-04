@@ -129,6 +129,12 @@ _INPUT_REGISTRY = {
     # --- Matériau ---
     Variable("fy", "235", "MPa",  "Limite élastique",             "EC3 §3.2"),
     Variable("fu",  "235", "MPa",  "Résistance ultime",            "EC3 §3.2"),
+    Variable("fck",  "30", "MPa",  "Résistance du béton",            "EC2"),
+    Variable("fyk",  "500", "MPa",  "Résistance de l'armature",            "EC2"),
+    Variable("εst",  "0.22", "%",  "Résistance de l'armature",            "EC2"),
+    Variable("εud",  "5", "%",  "Résistance de l'armature",            "EC2"),
+    Variable("εcu",  "0.35", "%",  "Résistance de l'armature",            "EC2"),
+    Variable("Es",  "210000", "MPa",  "Module d'young",            "-"),
 
     # --- Section ---
     Variable("b",  "200",   "mm", "Base de la section",          "—"),
@@ -142,13 +148,20 @@ _INPUT_REGISTRY = {
     Variable("Wy",  "10000",   "mm3", "Module élastique axe Y de la section",          "—"),
     Variable("Wz",  "10000",   "mm3", "Module élastique axe Z de la section",          "—"),
 
+    Variable("d",  "450",   "mm", "hauteur utile acier tendu",          "—"),
+    Variable("d'",  "50",   "mm", "hauteur utilie acier comprimé",          "—"),
+
     # --- Coefficients partiels ---
     Variable("γm0", "1.0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),
     Variable("γm1", "1.0", "-", "Coefficient partiel γM1",    "EC3 §6.1"),
-    Variable("γm2", "1.0", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
+    Variable("γ_m2", "1.0", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
 
     Variable("γc", "1.5", "-", "Coefficient partiel γc",    "EC2 §2.4.2.4"),
-    Variable("γc", "1.15", "-", "Coefficient partiel γs",    "EC2 §2.4.2.4"),
+    Variable("γs", "1.15", "-", "Coefficient partiel γs",    "EC2 §2.4.2.4"),
+    Variable("αcc", "1.0", "-", "Coefficient partiel αcc",    "EC2 §2.4.2.4"),
+
+    Variable("λ", "0.8", "-", "Coefficient partiel λ",    "??"),
+    Variable("η", "1.0", "-", "Coefficient partiel η",    "??"),
   ]
 }
 
