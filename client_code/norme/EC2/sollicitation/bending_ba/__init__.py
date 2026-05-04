@@ -32,12 +32,29 @@ class bending_ba(bending_baTemplate):
     self.row_fck = RowItem("fck", editable=True)
     self.row_fyk = RowItem("fyk", editable=True)
     self.row_med = RowItem("Med", editable=True)
+
+    self.chk_bx_d = RowItemChbx(
+      name_lbl = "",
+      name_chbx = "d = 0.9 h",
+      on_checked = self.chk_bx_d
+    )
+
+    self.chk_bx_dp = RowItemChbx(
+      name_lbl = "",
+      name_chbx = "d' = 0.1 h",
+      on_checked = self.chk_bx_dp
+    )
+    self.gp1 = GridPanel()
     
     self.card_data.add_input(self.row_b)
     self.card_data.add_input(self.row_h)
     self.card_data.add_input(self.row_fck)
     self.card_data.add_input(self.row_fyk)
     self.card_data.add_input(self.row_med)
+    self.card_data.add_input(self.gp1)
+
+    self.gp1.add_component(self.chk_bx_d, row="A", col_xs=0, width_xs=3)
+    self.gp1.add_component(self.chk_bx_dp, row="A", col_xs=3, width_xs=3)
 
     # --- Params avancés (cachés par défaut) ---
     self.row_gc = RowItem(
@@ -104,16 +121,6 @@ class bending_ba(bending_baTemplate):
       row_type = "param"
     )
 
-    self.chk_bx_d = RowItemChbx(
-      name_chbx = "d = O.9 h",
-      on_checked = self.chk_bx_d
-    )
-    
-    self.chk_bx_dp = RowItemChbx(
-      name_chbx = "d' = O.1 h",
-      on_checked = self.chk_bx_dp
-    )
-
     component.append(self.row_gc)
     component.append(self.row_gs)
     component.append(self.row_acc)
@@ -135,4 +142,14 @@ class bending_ba(bending_baTemplate):
 
   def chk_bx_d(self):
     if self.chk_bx_d.checked:
+      self.chk_bx_d.chkbx_value = "d = O.9 h"
+    else :
+      self.chk_bx_d.chkbx_value = "d ≠ O.9 h"
+
+  def chk_bx_dp(self):
+    if self.chk_bx_dp.checked:
+      self.chk_bx_dp.chkbx_value = "d' = O.1 h"
+    else :
+      self.chk_bx_dp.chkbx_value = "d' ≠ O.1 h"
+
       
