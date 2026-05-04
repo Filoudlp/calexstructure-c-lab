@@ -1,4 +1,4 @@
-from ._anvil_designer import bendingTemplate
+from ._anvil_designer import bending_cmTemplate
 from anvil import *
 
 from .....composant.BlockCard import BlockCard
@@ -11,7 +11,7 @@ from ..... import norme
 from plotly import graph_objs as go
 
 
-class bending(bendingTemplate):
+class bending_cm(bending_cmTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 
