@@ -30,6 +30,10 @@ class BABendingRoute(Route):
   path = "/ba_bending"
   form = 'norme.EC2.sollicitation.bending_ba'
 
+class BAMassifRoute(Route):
+  path = "/ba_massif"
+  form = 'norme.EC2.Xlmt.massif_ba'
+
 #======
 #= CM =
 #======
