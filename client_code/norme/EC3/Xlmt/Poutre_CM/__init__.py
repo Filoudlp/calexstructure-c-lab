@@ -1,19 +1,15 @@
 from ._anvil_designer import Poutre_CMTemplate
 from anvil import *
-from routing import router
-import stripe.checkout
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.server
-import anvil.users
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
-import anvil.http
-import json
 
 from .....Layout_Calculation import Layout_Calculation
+from .....composant.BlockCard import BlockCard
+from .....composant.RowItem import RowItem
+from .....composant.RowItemDdm import RowItemDdm
+from .....composant.RowItemChbx import RowItemChbx
+from .....composant.RowPlot import RowPlot
+
 from ..... import norme
+from plotly import graph_objs as go
 
 class Poutre_CM(Poutre_CMTemplate):
   def __init__(self, **properties):

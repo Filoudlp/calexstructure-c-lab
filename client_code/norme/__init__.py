@@ -143,6 +143,8 @@ _INPUT_REGISTRY = {
     Variable("A",   "1000",  "mm²", "Aire de la section",          "—"),
     Variable("Anet", "1000", "mm²", "Aire nette de la section",    "—"),
     Variable("Av",  "1000",   "mm²", "Aire de cisaillement de la section",          "—"),
+    Variable("Avy",  "1000",   "mm²", "Aire de cisaillement de la section axe y",          "—"),
+    Variable("Avz",  "1000",   "mm²", "Aire de cisaillement de la section axe z",          "—"),
     Variable("Iy",  "10000",   "mm4", "Inertie axe Y de la section",          "—"),
     Variable("Iz",  "10000",   "mm4", "Inertie axe Z de la section",          "—"),
     Variable("Wy",  "10000",   "mm3", "Module élastique axe Y de la section",          "—"),
@@ -154,7 +156,9 @@ _INPUT_REGISTRY = {
     # --- Coefficients partiels ---
     Variable("γm0", "1.0", "-", "Coefficient partiel γM0",    "EC3 §6.1"),
     Variable("γm1", "1.0", "-", "Coefficient partiel γM1",    "EC3 §6.1"),
-    Variable("γ_m2", "1.0", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
+    Variable("γm2", "1.0", "-", "Coefficient partiel γM2",    "EC3 §6.1"),
+    Variable("α", "1.0", "-", "Coefficient α de flexion composée",    "EC3 XX"),
+    Variable("β", "1.0", "-", "Coefficient β de flexion composée",    "EC3 XX"),
 
     Variable("γc", "1.5", "-", "Coefficient partiel γc",    "EC2 §2.4.2.4"),
     Variable("γs", "1.15", "-", "Coefficient partiel γs",    "EC2 §2.4.2.4"),

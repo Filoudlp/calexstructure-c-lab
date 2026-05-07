@@ -34,8 +34,8 @@ class BABendingRoute(Route):
 #= CM =
 #======
 class PouCMRoute(Route):
-  path = "/poutre_cm"
-  form = 'norme.EC3.Xlmt.Poutre_CM'
+  path = "/cm_beam"
+  form = 'norme.EC3.Xlmt.beam_cm'
 
 class CMCompressionRoute(Route): # OK
   path = "/cm_compression"
