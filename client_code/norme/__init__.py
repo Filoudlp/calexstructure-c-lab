@@ -139,6 +139,7 @@ _INPUT_REGISTRY = {
     # --- Section ---
     Variable("b",  "200",   "mm", "Base de la section",          "—"),
     Variable("h", "500",    "mm", "Hauteur de la section",          "—"),
+    Variable("L", "1000",    "mm", "Hauteur de la section",          "—"),
     Variable("e",  "10",   "mm", "Epaisseur de la section",          "—"),
     Variable("A",   "1000",  "mm²", "Aire de la section",          "—"),
     Variable("Anet", "1000", "mm²", "Aire nette de la section",    "—"),

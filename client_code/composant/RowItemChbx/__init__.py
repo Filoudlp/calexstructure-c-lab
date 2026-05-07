@@ -22,10 +22,14 @@ class RowItemChbx(RowItemChbxTemplate):
   def checked(self):
     return self.chbx.checked
 
+  @checked.setter
+  def checked(self, val):
+    self.chbx.checked = val
+
   @property
   def chkbx_value(self):
     return self.chbx.text
 
-  @checked.setter
+  @chkbx_value.setter
   def chkbx_value(self, val):
     self.chbx.text = val

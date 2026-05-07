@@ -28,9 +28,11 @@ class massif_ba(massif_baTemplate):
     self.row_b = RowItem("b", editable=True)
     self.row_h = RowItem("h", editable=True)
     self.row_L = RowItem("L", editable=True)
+    self.row_hp = RowItem("h", editable=True)
 
     self.card_data.add_input(self.row_b)
     self.card_data.add_input(self.row_h)
+    self.card_data.add_input(self.row_hp)
     self.card_data.add_input(self.row_L)
 
       # Materiaux
@@ -61,15 +63,20 @@ class massif_ba(massif_baTemplate):
 
     self.card_data.add_input(self.gp1)
 
-    self.gp1.add_component(self.chk_bx_d, row="A", col_xs=0, width_xs=3)
-    self.gp1.add_component(self.chk_bx_dp, row="A", col_xs=3, width_xs=3)
+    self.gp1.add_component(self.chk_bx_d, row="A", col_xs=0, width_xs=6)
+    self.gp1.add_component(self.chk_bx_dp, row="A", col_xs=6, width_xs=6)
 
     self.lbl_way = Label(text="Méthode", bold=True, underline=True)
+
+    self.card_data.add_input(self.lbl_way)
+    
     self.chk_way1 = RowItemChbx(
       name_lbl = "",
       name_chbx = "Bielle/Tirant centré",
       on_checked = self.on_chk_way1
     )
+
+    self.chk_way1.checked = True
 
     self.chk_way2 = RowItemChbx(
       name_lbl = "",
@@ -87,11 +94,9 @@ class massif_ba(massif_baTemplate):
 
     self.card_data.add_input(self.gp2)
 
-    self.gp2.add_component(self.chk_way1, row="A", col_xs=0, width_xs=3)
-    self.gp2.add_component(self.chk_way2, row="A", col_xs=3, width_xs=3)
-    self.gp2.add_component(self.chk_way3, row="A", col_xs=3, width_xs=3)
-
-    self.card_data.add_input(self.gp1)
+    self.gp2.add_component(self.chk_way1, row="A", col_xs=0, width_xs=4)
+    self.gp2.add_component(self.chk_way2, row="A", col_xs=4, width_xs=4)
+    self.gp2.add_component(self.chk_way3, row="A", col_xs=8, width_xs=4)
     
     # --- Params avancés (cachés par défaut) ---
     self.row_gc = RowItem(
@@ -134,16 +139,29 @@ class massif_ba(massif_baTemplate):
     self.content_panel.add_component(self.cp)
     self.cp.add_component(self.card_data)
 
-  def chk_bx_d(self):
+  def chk_bx_d(self, **event_args):
     if self.chk_bx_d.checked:
       self.chk_bx_d.chkbx_value = "d = O.9 h"
     else :
       self.chk_bx_d.chkbx_value = "d ≠ O.9 h"
 
-  def chk_bx_dp(self):
+  def chk_bx_dp(self, **event_args):
     if self.chk_bx_dp.checked:
       self.chk_bx_dp.chkbx_value = "d' = O.1 h"
     else :
       self.chk_bx_dp.chkbx_value = "d' ≠ O.1 h"
 
+  def on_chk_way1(self, **event_args):
+    if self.chk_way1.checked:
+      self.row_hp.visible = False
+      self.chk_way2.checked = False  
+      self.chk_way3.checked = False  
 
+  def on_chk_way2(self, **event_args):
+    pass
+
+  def on_chk_way3(self, **event_args):
+    if self.chk_way3.checked:
+      self.row_hp.visible = False
+      self.chk_way1.checked = False
+      self.chk_way2.checked = False  
