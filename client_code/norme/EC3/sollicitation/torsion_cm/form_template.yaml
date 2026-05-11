@@ -2,11 +2,12 @@ components_by_slot:
   content:
   - layout_properties: {}
     name: heading_1
-    properties: {text: Poutre (EN 1993-1-1)}
+    properties: {text: Flexion (EN 1993-1-1)}
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
   - layout_properties: {}
     name: content_panel
-    properties: {}
+    properties: {role: page-container}
     type: FlowPanel
+  sidesheet: []
 is_package: true
 layout: {type: 'form:HomepageLayout'}

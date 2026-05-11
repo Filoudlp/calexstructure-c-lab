@@ -41,3 +41,18 @@ class tools_concrete(tools_concreteTemplate):
   def btn_massif_click(self, **event_args):
     """This method is called when the button is clicked"""
     navigate(path="/ba_massif")
+
+  @handle("btn_column", "click")
+  def btn_column_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    navigate(path="/column_ba")
+
+  @handle("btn_compression_forfaitaire", "click")
+  def btn_compression_forfaitaire_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    navigate(path="/ba_compression_forfaitaire")
+
+  @handle("btn_compression", "click")
+  def btn_compression_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    navigate(path="/ba_compression")

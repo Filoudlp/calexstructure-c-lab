@@ -20,8 +20,12 @@ components:
       properties: {role: outlined-button, text: Flexion}
       type: Button
     - layout_properties: {grid_position: 'ARQMZV,SXOVBO'}
-      name: outlined_button_2
-      properties: {role: outlined-button, text: outlined_button_2}
+      name: btn_compression_forfaitaire
+      properties: {role: outlined-button, text: Compression forfaitaire}
+      type: Button
+    - layout_properties: {grid_position: 'FMPXCC,LAISHE'}
+      name: btn_compression
+      properties: {role: outlined-button, text: Compression (Rigidité / Courbure Nominal)}
       type: Button
     layout_properties: {grid_position: 'HLSKGP,SKYTSV'}
     name: otld_soliciation
@@ -48,8 +52,8 @@ components:
       properties: {role: outlined-button, text: Massif}
       type: Button
     - layout_properties: {grid_position: 'ARQMZV,SXOVBO'}
-      name: outlined_button_4
-      properties: {role: outlined-button, text: outlined_button_2}
+      name: btn_column
+      properties: {role: outlined-button, text: Poteau}
       type: Button
     layout_properties: {grid_position: 'PNYOZC,MZJWED'}
     name: otld_lmt
