@@ -20,7 +20,7 @@ class compression_forfaitaire_ba(compression_forfaitaire_baTemplate):
     # BLOC 1 : DONNÉES D'ENTRÉE
     # ==========================================================
     self.card_data = BlockCard(
-      title="Données — Massif",
+      title="Données",
       header_color="input",  # jaune
     )
 
@@ -29,11 +29,9 @@ class compression_forfaitaire_ba(compression_forfaitaire_baTemplate):
     self.row_b = RowItem("b", editable=True)
     self.row_h = RowItem("h", editable=True)
     self.row_L = RowItem("L", editable=True)
-    self.row_hp = RowItem("h", editable=True)
 
     self.card_data.add_input(self.row_b)
     self.card_data.add_input(self.row_h)
-    self.card_data.add_input(self.row_hp)
     self.card_data.add_input(self.row_L)
 
     # Materiaux
@@ -44,6 +42,11 @@ class compression_forfaitaire_ba(compression_forfaitaire_baTemplate):
     self.card_data.add_input(self.row_fyk)
 
     # Effort
+    self.row_as = RowItem(name = "As", editable=True)
+
+    self.card_data.add_input(self.row_as)
+    
+    # Effort
     self.row_ned = RowItem("Ned", editable=True)
 
     self.card_data.add_input(self.row_ned)
@@ -52,45 +55,11 @@ class compression_forfaitaire_ba(compression_forfaitaire_baTemplate):
     self.chk_bx_d = RowItemChbx(
       name_lbl="", name_chbx="d = 0.9 h", on_checked=self.chk_bx_d
     )
-
-    self.chk_bx_dp = RowItemChbx(
-      name_lbl="", name_chbx="d' = 0.1 h", on_checked=self.chk_bx_dp
-    )
     self.gp1 = GridPanel()
 
     self.card_data.add_input(self.gp1)
 
     self.gp1.add_component(self.chk_bx_d, row="A", col_xs=0, width_xs=6)
-    self.gp1.add_component(self.chk_bx_dp, row="A", col_xs=6, width_xs=6)
-
-    self.lbl_way = Label(text="Méthode", bold=True, underline=True)
-
-    self.card_data.add_input(self.lbl_way)
-
-    self.chk_way1 = RowItemChbx(
-      name_lbl="", name_chbx="Bielle/Tirant centré", on_checked=self.on_chk_way1
-    )
-
-    self.chk_way1.checked = True
-
-    self.chk_way2 = RowItemChbx(
-      name_lbl="", name_chbx="Bielle/Tirant excentré", on_checked=self.on_chk_way2
-    )
-
-    self.chk_way3 = RowItemChbx(
-      name_lbl="", name_chbx="Réseaux d'état", on_checked=self.on_chk_way3
-    )
-
-    self.btn_help = Button(icon="fa:question-circle")
-    self.btn_help.set_event_handler("click", self.btn_help_click)
-    self.gp2 = GridPanel()
-
-    self.card_data.add_input(self.gp2)
-
-    self.gp2.add_component(self.chk_way1, row="A", col_xs=0, width_xs=4)
-    self.gp2.add_component(self.chk_way2, row="A", col_xs=0, width_xs=4)
-    self.gp2.add_component(self.chk_way3, row="A", col_xs=0, width_xs=4)
-    self.gp2.add_component(self.btn_help, row="A", col_xs=0, width_xs=2)
 
     # --- Params avancés (cachés par défaut) ---
     self.row_gc = RowItem("γc", editable=True, row_type="param")
@@ -101,47 +70,71 @@ class compression_forfaitaire_ba(compression_forfaitaire_baTemplate):
 
     self.row_d = RowItem("d", editable=True, row_type="param")
 
-    self.row_dp = RowItem("d'", editable=True, row_type="param")
-
     self.card_data.add_param(self.row_gc)
     self.card_data.add_param(self.row_gs)
     self.card_data.add_param(self.row_acc)
     self.card_data.add_param(self.row_d)
-    self.card_data.add_param(self.row_dp)
 
-    self.cp = ColumnPanel()
-    self.content_panel.add_component(self.cp)
-    self.cp.add_component(self.card_data)
+    self.content_panel.add_component(self.card_data)
+    
 
-  def btn_help_click(self, **event_args):
-    """Quand on clique sur le bouton"""
-    alert(
-      """Bielle/Tirant centrée : explication \nBielle/Tirant excentré : explication \nMéthode réseau d'état : explication \n"""
+    # ==========================================================
+    # BLOC 2 : RÉSULTATS
+    # ==========================================================
+    self.card_results = BlockCard(
+      title="Vérification Compression forfaitaire",
+      header_color="output",  # bleu
     )
+    geo = Label(text="Caractéristique géométrique", bold=True, underline=True)
+    self.row_ac = RowItem(name = "Ac", editable=False, row_type="param")
+    self.row_Iy = RowItem(name = "Iy", editable=False, row_type="param")
+    self.row_Iz = RowItem(name = "Iz", editable=False, row_type="param")
+    self.row_iy = RowItem(name = "iy", editable=False, row_type="param")
+    self.row_iz = RowItem(name = "iz", editable=False, row_type="param")
+    self.row_ly = RowItem(name = "λy", editable=False, row_type="param")
+    self.row_lz = RowItem(name = "λz", editable=False, row_type="param")
+    self.row_lmax = RowItem(name = "λmax", editable=False, row_type="param")
+
+    verif = Label(text="Vérificaiton", bold=True, underline=True)
+
+    self.card_results.add_param(geo)
+    self.card_results.add_param(self.row_ac)
+    self.card_results.add_param(self.row_Iy)
+    self.card_results.add_param(self.row_Iz)
+    self.card_results.add_param(self.row_iy)
+    self.card_results.add_param(self.row_iz)
+    self.card_results.add_param(self.row_ly)
+    self.card_results.add_param(self.row_lz)
+    self.card_results.add_param(self.row_lmax)
+    
+    self.card_results.add_param(verif)
+
+    self.row_alpha = RowItem(name = "alpha", editable=False, row_type="param")
+    self.row_kh = RowItem(name = "kh", editable=False, row_type="param")
+    self.row_delta = RowItem(name = "delta", editable=False, row_type="param")
+    self.row_roh = RowItem(name = "roh", editable=False, row_type="param")
+    self.row_ks = RowItem(name = "ks", editable=False, row_type="param")
+
+    self.card_results.add_param(self.row_alpha)
+    self.card_results.add_param(self.row_kh)
+    self.card_results.add_param(self.row_delta)
+    self.card_results.add_param(self.row_roh)
+    self.card_results.add_param(self.row_ks)
+
+    self.row_nedmax = RowItem(name = "Ned,max", editable=False, row_type="param")
+
+    self.card_results.add_result(self.row_nedmax)
+
+    self.val = RowItem(name = "Ned < Ned,max", editable=False, row_type="param")
+
+    self.card_results.add_result(self.val)
+
+    self.card_results.toggle_button_visible = True
+    
+    self.content_panel.add_component(self.card_results)
 
   def chk_bx_d(self, **event_args):
     if self.chk_bx_d.checked:
       self.chk_bx_d.chkbx_value = "d = O.9 h"
     else:
       self.chk_bx_d.chkbx_value = "d ≠ O.9 h"
-
-  def chk_bx_dp(self, **event_args):
-    if self.chk_bx_dp.checked:
-      self.chk_bx_dp.chkbx_value = "d' = O.1 h"
-    else:
-      self.chk_bx_dp.chkbx_value = "d' ≠ O.1 h"
-
-  def on_chk_way1(self, **event_args):
-    if self.chk_way1.checked:
-      self.row_hp.visible = False
-      self.chk_way2.checked = False
-      self.chk_way3.checked = False
-
-  def on_chk_way2(self, **event_args):
-    pass
-
-  def on_chk_way3(self, **event_args):
-    if self.chk_way3.checked:
-      self.row_hp.visible = False
-      self.chk_way1.checked = False
-      self.chk_way2.checked = False

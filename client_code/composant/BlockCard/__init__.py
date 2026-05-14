@@ -54,6 +54,14 @@ class BlockCard(BlockCardTemplate):
     """Vide rslt_panel avant un recalcul."""
     self.rslt_panel.clear()
 
+  @property
+  def toggle_button_visible(self):
+    return self.toggle_icon_button_1.visible
+
+  @toggle_button_visible.setter
+  def toggle_button_visible(self, val):
+    self.toggle_icon_button_1.visible = val
+
     # Any code you write here will run before the form opens.
     
     

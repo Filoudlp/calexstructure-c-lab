@@ -23,7 +23,7 @@ class BACompressionFrofaitaireRoute(Route):
   form = 'norme.EC2.sollicitation.compression_forfaitaire_ba'
   
 class BACompressioneRoute(Route):
-    path = "/ba_compression"
+  path = "/ba_compression"
   form = 'norme.EC2.sollicitation.compression_ba'
 
 class BAShearRoute(Route):
